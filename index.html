@@ -191,6 +191,12 @@ nav.top ul a:hover{color:var(--on-night);background:var(--night-2)}
 @media (max-width:560px){.appbox{grid-template-columns:auto minmax(0,1fr)}.appbox .btn{grid-column:1/-1}}
 .howto{font-size:15px;color:var(--ink-2)}
 .yt{aspect-ratio:16/9;max-width:100%;border-radius:10px;overflow:hidden;background:#000}.yt iframe{display:block;width:100%;height:100%;border:0}
+.social{display:flex;flex-wrap:wrap;gap:8px}
+.social a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid var(--on-night-2);color:var(--on-night);text-decoration:none;font-weight:700;font-size:14px}
+.social a:hover{background:var(--night-2)}
+.social svg{width:18px;height:18px}
+.hero-social a{border-color:var(--line);color:var(--ink);background:var(--paper)}
+.hero-social a:hover{background:var(--ice)}
 /* regolamento */
 .rules{display:grid;gap:8px}
 details.rule{background:var(--paper);border:1px solid var(--line);border-radius:10px}
@@ -261,6 +267,7 @@ footer b{color:var(--on-night)}
       <div class="bar" aria-hidden="true"><i id="abar"></i></div>
       <audio id="inno" src="inno.mp3" preload="none"></audio>
     </div>
+    <div class="social hero-social"><a href="https://www.facebook.com/Grannotturnomaclodio/" target="_blank" rel="noopener" aria-label="Gran Notturno Maclodio su Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21z"/></svg><span>Facebook</span></a><a href="https://www.instagram.com/grannotturnomaclodio/" target="_blank" rel="noopener" aria-label="Gran Notturno Maclodio su Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21 8c-.1-1.5-.4-2.8-1.5-3.9S17.5 2.7 16 2.6C14.5 2.5 9.5 2.5 8 2.6c-1.5.1-2.8.4-3.9 1.5S2.7 6.5 2.6 8c-.1 1.5-.1 6.5 0 8 .1 1.5.4 2.8 1.5 3.9s2.4 1.4 3.9 1.5c1.5.1 6.5.1 8 0 1.5-.1 2.8-.4 3.9-1.5s1.4-2.4 1.5-3.9c.1-1.5.1-6.5 0-8zm-2 9.7a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.3.4s-4.1.1-5.3-.4A3 3 0 0 1 5 17.7c-.5-1.2-.4-4-.4-5.3s-.1-4.1.4-5.3A3 3 0 0 1 6.7 5.4c1.2-.5 4-.4 5.3-.4s4.1-.1 5.3.4A3 3 0 0 1 19 7.1c.5 1.2.4 4 .4 5.3s.1 4.1-.4 5.3z"/></svg><span>Instagram</span></a></div>
   </div>
   <div class="crest"><img src="logo.png" alt="Stemma del Gran Notturno Maclodio: scudo a strisce blu e bianche con pallone alato e la data 1978" width="700" height="522"></div>
 </div></header>
@@ -423,7 +430,7 @@ footer b{color:var(--on-night)}
 
 <footer><div class="in">
   <div><b>Gran Notturno Maclodio</b> · Oratorio di Maclodio (BS) · dal 1978</div>
-  <div>#GranNotturnoMaclodio #Maclodio #TorneoEstivo</div>
+  <div style="display:grid;gap:10px;justify-items:start"><div class="social"><a href="https://www.facebook.com/Grannotturnomaclodio/" target="_blank" rel="noopener" aria-label="Gran Notturno Maclodio su Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21z"/></svg><span>Facebook</span></a><a href="https://www.instagram.com/grannotturnomaclodio/" target="_blank" rel="noopener" aria-label="Gran Notturno Maclodio su Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21 8c-.1-1.5-.4-2.8-1.5-3.9S17.5 2.7 16 2.6C14.5 2.5 9.5 2.5 8 2.6c-1.5.1-2.8.4-3.9 1.5S2.7 6.5 2.6 8c-.1 1.5-.1 6.5 0 8 .1 1.5.4 2.8 1.5 3.9s2.4 1.4 3.9 1.5c1.5.1 6.5.1 8 0 1.5-.1 2.8-.4 3.9-1.5s1.4-2.4 1.5-3.9c.1-1.5.1-6.5 0-8zm-2 9.7a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.3.4s-4.1.1-5.3-.4A3 3 0 0 1 5 17.7c-.5-1.2-.4-4-.4-5.3s-.1-4.1.4-5.3A3 3 0 0 1 6.7 5.4c1.2-.5 4-.4 5.3-.4s4.1-.1 5.3.4A3 3 0 0 1 19 7.1c.5 1.2.4 4 .4 5.3s.1 4.1-.4 5.3z"/></svg><span>Instagram</span></a></div><span>@grannotturnomaclodio · #GranNotturnoMaclodio #Maclodio #TorneoEstivo</span></div>
 </div></footer>
 <div class="toast" id="toast" hidden></div>
 <div class="lightbox" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto della squadra"><figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption>

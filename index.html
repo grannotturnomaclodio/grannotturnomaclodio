@@ -200,63 +200,55 @@ nav.top .in{position:relative}
 .next-ed{display:flex;align-items:center;gap:14px;width:fit-content;max-width:100%;background:var(--magenta);color:#fff;border-radius:14px;padding:14px 22px;font-family:var(--f-display);font-weight:400;font-size:clamp(24px,3.6vw,34px);line-height:1.05;text-transform:uppercase;letter-spacing:.01em;box-shadow:0 14px 30px -16px rgba(216,16,111,.7)}
 .next-ed .dot{flex:none;width:14px;height:14px;border-radius:50%;background:#fff;animation:pulse 1.6s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
-.brk{display:grid;gap:14px}
-.brk-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
-.brk-tabs{display:flex;flex-wrap:wrap;gap:6px}
-.brk-tabs button{border:1px solid var(--on-night-2);background:transparent;color:var(--on-night);border-radius:999px;padding:9px 16px;font:800 14px var(--f-body);cursor:pointer}
-.brk-tabs button[aria-selected="true"]{background:var(--magenta);border-color:var(--magenta);color:#fff}
+.tbw{display:grid;gap:12px}
 .brk-orig{color:var(--on-night-2);font-size:14px;font-weight:700}
-.brk-note{margin:0;color:var(--on-night-2);font-size:15px}
-.brk-hint{margin:0;color:var(--on-night-2);font-size:13px}
-.brk-scroll{overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}
-.bcols{display:flex;gap:18px;min-width:max-content;align-items:stretch}
-.bcol{display:flex;flex-direction:column;width:186px}
-.bcol h4{margin:0 0 10px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--on-night-2)}
-.bbody{flex:1;display:flex;flex-direction:column}
-.bgrp{flex:1;display:flex;flex-direction:column;position:relative}
-.bslot{flex:1;display:flex;align-items:center;padding-block:6px;position:relative}
-.bgrp.pair::after{content:"";position:absolute;right:-10px;top:25%;height:50%;width:9px;border:2px solid var(--night-2);border-left:0;border-radius:0 6px 6px 0}
-.bgrp.single::after{content:"";position:absolute;right:-10px;top:50%;width:9px;border-top:2px solid var(--night-2)}
-.bcol.last .bgrp::after{display:none}
-.bcol:not(:first-child) .bm::before{content:"";position:absolute;left:-10px;top:50%;width:9px;border-top:2px solid var(--night-2)}
-.bm{position:relative;width:100%;background:var(--night-2);border-radius:10px;padding:8px 10px;display:grid;gap:3px}
-.bm .top{display:flex;justify-content:space-between;gap:6px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--on-night-2)}
-.bm .top b{color:#fff;background:var(--royal);border-radius:4px;padding:0 5px;font-weight:800}
-.bm .s{display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:600;color:var(--on-night);padding:3px 0;border-top:1px solid rgba(255,255,255,.08)}
-.bm .s span{min-width:0;overflow-wrap:anywhere}
-.bm .s b{font-variant-numeric:tabular-nums;font-size:15px}
-.bm .s.w{color:#fff;font-weight:800}.bm .s.w b{color:#9fe3b8}
-.bm .s.l{color:var(--on-night-2);font-weight:500}
-.bcard .sc{color:#fff}
-.bm .s.bin{color:#ff9ccc}
-.bm .bo{font-size:11px;font-weight:800;letter-spacing:.03em;color:#ff7dbb}
-.bm .bo.win{color:#9fe3b8}
-.bfin{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px}
-.bcard{background:var(--night-2);border-radius:var(--r);padding:16px;display:grid;gap:8px;align-content:start}
-.bcard h4{margin:0;font-family:var(--f-display);font-weight:400;font-size:24px;text-transform:uppercase;color:var(--on-night)}
-.bcard .vs{display:flex;justify-content:space-between;gap:8px;font-weight:800;font-size:16px;color:var(--on-night)}
-.bcard .vs span:nth-child(2){color:#ff7dbb}
-.bcard ul{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:14px;color:var(--on-night-2)}
-.bcard .res{border-top:1px solid rgba(255,255,255,.1);padding-top:8px;font-size:14px;color:var(--on-night)}
-.bcard .res b{color:#9fe3b8}
-.bcard.gold{outline:2px solid var(--magenta)}
-@media (max-width:720px){
-  .brk-scroll{overflow-x:visible}
-  .bcols{display:grid;min-width:0;gap:22px}
-  .bcol{width:auto}
-  .bcol h4{font-size:15px;color:var(--on-night);border-bottom:2px solid var(--magenta);padding-bottom:6px;margin-bottom:8px}
-  .bbody{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:10px}
-  .bgrp{display:contents}
-  .bslot{padding:0}
-  .bgrp.pair::after,.bgrp.single::after,.bcol:not(:first-child) .bm::before{display:none}
-  .bm{padding:12px 14px;gap:5px}
-  .bm .top{font-size:13px}
-  .bm .s{font-size:16px;padding:6px 0}
-  .bm .s b{font-size:18px}
-  .bm .bo{font-size:13px}
-  .brk-tabs{width:100%}
-  .brk-tabs button{flex:1 1 auto;font-size:15px;padding:11px 12px}
-}
+.tbw-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px}
+.tbw-hint{margin:0;color:var(--on-night-2);font-size:15px}
+.tbw-scroll{overflow:auto;border-radius:16px;background:#eef3fb;-webkit-overflow-scrolling:touch;max-height:none}
+.tbw-scroll:focus-visible{outline:3px solid var(--magenta)}
+.tb{display:grid;grid-template-columns:auto 250px;grid-template-areas:"w sf" "l sf";gap:26px 40px;width:max-content;padding:22px 26px;color:#0f2350;font-family:var(--f-body)}
+.tb-blk{display:grid;gap:10px;align-content:start}
+.tb-blk.w{grid-area:w}.tb-blk.l{grid-area:l}
+.tb-t{font-family:var(--f-display);font-weight:400;font-size:30px;line-height:1;text-transform:uppercase;margin:0}
+.tb-blk.w .tb-t{color:#2f9b2f}.tb-blk.l .tb-t{color:#d93a3a}
+.tb-cols{display:flex;gap:26px;align-items:stretch}
+.tb-col{display:flex;flex-direction:column;width:204px}
+.tb-col h4{margin:0 0 4px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#5b6b8f}
+.tb-body{flex:1;display:flex;flex-direction:column}
+.tb-g{flex:1;display:flex;flex-direction:column;position:relative}
+.tb-sl{flex:1;display:flex;flex-direction:column;justify-content:center;padding-block:5px;position:relative}
+.tb-g.pair::after{content:"";position:absolute;right:-14px;top:25%;height:50%;width:13px;border:2px solid #0f2350;border-left:0}
+.tb-g.single::after{content:"";position:absolute;right:-14px;top:50%;width:13px;border-top:2px solid #0f2350}
+.tb-col.last .tb-g::after{display:none}
+.tb-col:not(:first-child) .tb-box::before{content:"";position:absolute;left:-14px;top:50%;width:13px;border-top:2px solid #0f2350}
+.tb-lab{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#0f2350;margin:0 0 3px 2px;white-space:nowrap}
+.tb-lab em{font-style:normal;color:#d93a3a}
+.tb-box{position:relative;border-radius:8px;border:2px solid #0f2350;box-shadow:3px 3px 0 #0f2350;overflow:hidden}
+.tb-blk.w .tb-box{background:#cfeeb4}.tb-blk.l .tb-box{background:#f8c9c9}
+.tb-r{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:6px;padding:5px 8px;font-size:13px;font-weight:600}
+.tb-r+.tb-r{border-top:1px solid rgba(15,35,80,.35)}
+.tb-r .e{min-width:0;font-family:var(--f-display);font-size:15px;color:#fff;background:#d93a3a;border-radius:4px;padding:0 4px;line-height:1.3}
+.tb-r .e:empty{display:block;width:0;padding:0;margin-right:-6px}
+.tb-r .n{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tb-r .sc{font-family:var(--f-display);font-size:19px;line-height:1;font-variant-numeric:tabular-nums}
+.tb-r.w{font-weight:800}.tb-r.w .sc{color:#0b6b2a}
+.tb-r.l{color:#4b5a7c}.tb-r.l .sc{color:#4b5a7c}
+.tb-d{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:3px 8px;background:rgba(255,255,255,.55);color:#0f2350;display:flex;justify-content:space-between;gap:6px}
+.tb-d .num{color:#d93a3a}
+.tb-sf{grid-area:sf;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.tb-y{background:#fbe48a;border:2px solid #0f2350;box-shadow:3px 3px 0 #0f2350;border-radius:10px;padding:12px 14px;display:grid;gap:6px}
+.tb-y h5{margin:0;font-family:var(--f-display);font-weight:400;font-size:20px;text-transform:uppercase;line-height:1}
+.tb-y .vs{display:grid;grid-template-columns:1fr auto;gap:2px 8px;font-size:14px;font-weight:700}
+.tb-y .vs small{font-size:10px;color:#5b6b8f;font-weight:800;letter-spacing:.06em}
+.tb-y .vs .w{font-weight:900}
+.tb-y .legs{font-size:12px;font-weight:700;color:#0f2350;border-top:1px solid rgba(15,35,80,.3);padding-top:5px}
+.tb-y.fin{background:#fbe48a;outline:3px solid #d8106f;outline-offset:2px}
+.tb-y.fin .cup{font-size:12px;font-weight:900;color:#d8106f;text-transform:uppercase;letter-spacing:.06em}
+.tbw-legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--on-night-2)}
+.tbw-legend span{display:inline-flex;align-items:center;gap:6px}
+.lg{display:inline-block;width:16px;height:12px;border-radius:3px;border:1px solid #0f2350}.lg.v{background:#cfeeb4}.lg.p{background:#f8c9c9}
+.lg-n{font-family:var(--f-display);font-weight:400;font-size:14px;color:#fff;background:#d93a3a;border-radius:4px;padding:0 5px}
+@media (max-width:720px){.tb{padding:16px 18px;gap:22px 30px}.tb-t{font-size:26px}}
 /* regolamento */
 .rules{display:grid;gap:8px}
 details.rule{background:var(--paper);border:1px solid var(--line);border-radius:10px}
@@ -332,14 +324,14 @@ footer b{color:var(--on-night)}
   <div class="split">
     <div style="display:grid;gap:18px">
       <p class="lead" style="margin:0">Le iscrizioni si raccolgono su WhatsApp o via email. Le squadre dell'edizione precedente hanno diritto di prelazione.</p>
-      <div><div class="eyebrow" style="color:var(--ink-2)">WhatsApp iscrizioni e informazioni</div><div class="phone">335 213 789</div><div class="phone">339 303 2760</div></div>
+      <div><div class="eyebrow" style="color:var(--ink-2)">WhatsApp iscrizioni e informazioni</div><div class="phone">339 303 2760</div></div>
       <div><div class="eyebrow" style="color:var(--ink-2)">Email iscrizioni</div><div class="phone" style="font-size:clamp(26px,4.5vw,38px)">info@sportmc.it</div></div>
       <ol class="steps">
         <li>Compila la richiesta qui accanto.</li>
         <li>Invia il messaggio già pronto su WhatsApp o per email a info@sportmc.it.</li>
         <li>L'organizzazione ti ricontatta per confermare il posto.</li>
       </ol>
-      <div style="display:flex;flex-wrap:wrap;gap:10px"><button class="btn sec" type="button" id="copy-num">Copia 335 213 789</button><button class="btn sec" type="button" id="copy-num2">Copia 339 303 2760</button><button class="btn sec" type="button" id="copy-mail">Copia l'email</button></div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px"><button class="btn sec" type="button" id="copy-num2">Copia 339 303 2760</button><button class="btn sec" type="button" id="copy-mail">Copia l'email</button></div>
     </div>
     <form class="join" id="join" novalidate>
       <label for="j-nome">Nome della squadra<input id="j-nome" required placeholder="Fino a 4 sponsor + paese o città"></label>
@@ -353,11 +345,11 @@ footer b{color:var(--on-night)}
       <div><button class="btn pri" type="submit">Prepara la richiesta</button></div>
       <div class="out" id="j-out" hidden>
         <pre id="j-text"></pre>
-        <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn wa" id="j-wa" href="https://wa.me/39335213789" target="_blank" rel="noopener">Invia al 335 213 789</a><a class="btn wa" id="j-wa2" href="https://wa.me/393393032760" target="_blank" rel="noopener">Invia al 339 303 2760</a><button class="btn sec" type="button" id="j-copy">Copia il testo</button></div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn wa" id="j-wa2" href="https://wa.me/393393032760" target="_blank" rel="noopener">Invia al 339 303 2760</a><button class="btn sec" type="button" id="j-copy">Copia il testo</button></div>
         <div class="mailbox"><b>Oppure per email a info@sportmc.it</b>
           <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn pri" id="j-gmail" href="https://mail.google.com/mail/?view=cm&amp;to=info@sportmc.it" target="_blank" rel="noopener">Scrivi con Gmail</a><a class="btn pri" id="j-outlook" href="https://outlook.live.com/mail/0/deeplink/compose?to=info@sportmc.it" target="_blank" rel="noopener">Scrivi con Outlook</a><a class="btn sec" id="j-mailto" href="mailto:info@sportmc.it">Altro programma di posta</a><button class="btn sec" type="button" id="j-mailcopy">Copia email e testo</button></div>
           <span class="muted" style="font-size:14px">Se nessun pulsante funziona, copia email e testo e incollali in un nuovo messaggio.</span></div>
-        <p class="muted" style="margin:0;font-size:14px">Se WhatsApp o l'email non si aprono, copia il testo e mandalo al 335 213 789, al 339 303 2760 o a info@sportmc.it.</p>
+        <p class="muted" style="margin:0;font-size:14px">Se WhatsApp o l'email non si aprono, copia il testo e mandalo al 339 303 2760 o a info@sportmc.it.</p>
       </div>
     </form>
   </div>
@@ -412,20 +404,10 @@ footer b{color:var(--on-night)}
     <div><b>Semifinali</b><span>V1 contro P2 e V2 contro P1, in andata e ritorno. Contano le vittorie.</span></div>
     <div><b>Finali</b><span>Nell'ultima serata: alle 21:10 il 3°/4° posto, alle 22:00 la finalissima.</span></div>
   </div>
-  <div class="brk" id="brk">
-    <div class="brk-head">
-      <div class="brk-tabs" role="tablist" aria-label="Tabellone">
-        <button type="button" role="tab" id="bt-v" aria-selected="true" aria-controls="bp-v">Vincente</button>
-        <button type="button" role="tab" id="bt-p" aria-selected="false" aria-controls="bp-p">Perdente</button>
-        <button type="button" role="tab" id="bt-f" aria-selected="false" aria-controls="bp-f">Semifinali e finali</button>
-      </div>
-      <a class="brk-orig" href="tabellone-2026.jpg" target="_blank" rel="noopener">Schema ufficiale 2026</a>
-    </div>
-    <p class="brk-note" id="brk-note"></p>
-    <div class="brk-scroll" role="tabpanel" id="bp-v" aria-labelledby="bt-v"></div>
-    <div class="brk-scroll" role="tabpanel" id="bp-p" aria-labelledby="bt-p" hidden></div>
-    <div role="tabpanel" id="bp-f" aria-labelledby="bt-f" hidden></div>
-    <p class="brk-hint">Risultati e date dell'edizione 2026.</p>
+  <div class="tbw" id="brk">
+    <div class="tbw-head"><p class="tbw-hint">Il tabellone completo dell'edizione 2026 con tutti i risultati. Sul telefono scorri con il dito per vederlo tutto.</p><a class="brk-orig" href="tabellone-2026.jpg" target="_blank" rel="noopener">Schema ufficiale 2026</a></div>
+    <div class="tbw-scroll" tabindex="0" aria-label="Tabellone 2026, scorribile"><div class="tb" id="tb"></div></div>
+    <div class="tbw-legend"><span><i class="lg v"></i>Tabellone vincente</span><span><i class="lg p"></i>Tabellone perdente: chi perde è eliminato</span><span><b class="lg-n">7</b>Numero di rientro dal tabellone vincente</span></div>
   </div>
 </div></section>
 
@@ -551,40 +533,36 @@ document.addEventListener("keydown",e=>{if(lb.hidden)return;if(e.key==="Escape")
 
 /* Tabellone */
 (function(){
-const M=(n,d,h,a,sa,b,sb,out,cls)=>({n,d,h,a,sa,b,sb,out,cls});
-const ML="Immobiliare ML",LA="Lancellotti",TP="Bar Tre Ponti",BO="Bovisasca",AL="Alice Costruzioni",VB="VI.BI. Elettrorecuperi",IC="L'Immobiliare",BZ="BZ Zanchi",TC="Tecnocasa",BM="Bar Milano 2",AS="Alta Serbatoi",QP="Q People Café",AB="Autodem. Buffoli",IM="Imbalplast",AC="AC Costruzioni",CA="Caffè Ambrosia";
-const V=[
- {t:"1° turno",k:"pair",m:[M("N° 1","Lun 8/6","21:10",ML,5,LA,6,"Perdente al n° 1"),M("N° 2","Lun 8/6","22:00",TP,5,BO,3,"Perdente al n° 2"),M("N° 3","Mer 10/6","21:10",AL,1,VB,4,"Perdente al n° 3"),M("N° 4","Mer 10/6","22:00",IC,2,BZ,6,"Perdente al n° 4"),M("N° 5","Gio 11/6","21:10",TC,7,BM,4,"Perdente al n° 5"),M("N° 6","Gio 11/6","22:00",AS,3,QP,1,"Perdente al n° 6"),M("N° 7","Ven 12/6","21:10",AB,9,IM,8,"Perdente al n° 7"),M("N° 8","Ven 12/6","22:00",AC,3,CA,8,"Perdente al n° 8")]},
- {t:"2° turno",k:"pair",m:[M("N° 9","Dom 14/6","22:00",LA,8,TP,3,"Perdente al n° 9"),M("N° 10","Lun 15/6","22:00",VB,3,BZ,5,"Perdente al n° 10"),M("N° 11","Mer 17/6","22:00",TC,4,AS,2,"Perdente al n° 11"),M("N° 12","Gio 18/6","22:00",AB,2,CA,3,"Perdente al n° 12")]},
- {t:"3° turno",k:"single",m:[M("N° 13","Lun 22/6","22:00",LA,3,BZ,6,"BZ Zanchi semifinalista V1","win"),M("N° 14","Mer 24/6","22:00",TC,3,CA,2,"Tecnocasa semifinalista V2","win")]}
+const ML="Immobiliare ML",LA="Lancellotti",TP="Bar Tre Ponti",BO="Bovisasca",AL="Alice Costruzioni",VB="VI.BI. Elettrorec.",IC="L'Immobiliare",BZ="BZ Zanchi",TC="Tecnocasa",BM="Bar Milano 2",AS="Alta Serbatoi",QP="Q People Café",AB="Autodem. Buffoli",IM="Imbalplast",AC="AC Costruzioni",CA="Caffè Ambrosia";
+/* [etichetta, giorno, ora, squadraA, golA, squadraB, golB, rientroA, rientroB] */
+const W=[
+ {t:"1° turno",k:"pair",m:[["N° 1","Lun 8/6","21:10",ML,5,LA,6],["N° 2","Lun 8/6","22:00",TP,5,BO,3],["N° 3","Mer 10/6","21:10",AL,1,VB,4],["N° 4","Mer 10/6","22:00",IC,2,BZ,6],["N° 5","Gio 11/6","21:10",TC,7,BM,4],["N° 6","Gio 11/6","22:00",AS,3,QP,1],["N° 7","Ven 12/6","21:10",AB,9,IM,8],["N° 8","Ven 12/6","22:00",AC,3,CA,8]]},
+ {t:"2° turno",k:"pair",m:[["N° 9","Dom 14/6","22:00",LA,8,TP,3],["N° 10","Lun 15/6","22:00",VB,3,BZ,5],["N° 11","Mer 17/6","22:00",TC,4,AS,2],["N° 12","Gio 18/6","22:00",AB,2,CA,3]]},
+ {t:"3° turno",k:"single",m:[["N° 13","Lun 22/6","22:00",LA,3,BZ,6],["N° 14","Mer 24/6","22:00",TC,3,CA,2]]}
 ];
-const P=[
- {t:"1° turno",k:"single",m:[M("Perd.","Dom 14/6","21:10",ML,7,BO,2,"Bovisasca eliminata"),M("Perd.","Lun 15/6","21:10",AL,3,IC,2,"L'Immobiliare eliminata"),M("Perd.","Mer 17/6","21:10",BM,4,QP,2,"Q People Café eliminata"),M("Perd.","Gio 18/6","21:10",IM,8,AC,2,"AC Costruzioni eliminata")]},
- {t:"2° turno",k:"pair",m:[M("Perd.","Ven 19/6","22:00",ML,5,AS,2,"Alta Serbatoi eliminata","in"),M("Perd.","Ven 19/6","21:10",AL,7,AB,2,"Autodem. Buffoli eliminata","in"),M("Perd.","Dom 21/6","22:00",BM,4,TP,6,"Bar Milano 2 eliminata","in"),M("Perd.","Dom 21/6","21:10",IM,8,VB,6,"VI.BI. eliminata","in")]},
- {t:"3° turno",k:"single",m:[M("Perd.","Lun 22/6","21:10",ML,7,AL,4,"Alice Costruzioni eliminata"),M("Perd.","Mer 24/6","21:10",IM,4,TP,2,"Bar Tre Ponti eliminata")]},
- {t:"4° turno",k:"single",m:[M("Perd.","Gio 25/6","21:10",ML,5,LA,3,"Immobiliare ML semifinalista P1","in win"),M("Perd.","Gio 25/6","22:00",IM,2,CA,4,"Caffè Ambrosia semifinalista P2","in win")]}
+const L=[
+ {t:"1° turno",k:"single",m:[["","Dom 14/6","21:10",ML,7,BO,2,1,2],["","Lun 15/6","21:10",AL,3,IC,2,3,4],["","Mer 17/6","21:10",BM,4,QP,2,5,6],["","Gio 18/6","21:10",IM,8,AC,2,7,8]]},
+ {t:"2° turno",k:"pair",m:[["","Ven 19/6","22:00",ML,5,AS,2,"",11],["","Ven 19/6","21:10",AL,7,AB,2,"",12],["","Dom 21/6","22:00",TP,6,BM,4,9,""],["","Dom 21/6","21:10",VB,6,IM,8,"",10]]},
+ {t:"3° turno",k:"single",m:[["","Lun 22/6","21:10",AL,4,ML,7],["","Mer 24/6","21:10",IM,4,TP,2]]},
+ {t:"4° turno",k:"single",m:[["","Gio 25/6","21:10",ML,5,LA,3,"",13],["","Gio 25/6","22:00",IM,2,CA,4,"",14]]}
 ];
-const row=(t,s,o)=>`<div class="s${o==="w"?" w":o==="l"?" l":""}"><span>${t}</span><b>${s}</b></div>`;
-const card=m=>{const wa=m.sa>m.sb;return `<div class="bm"><div class="top"><b>${m.n}</b><span>${m.d} · ${m.h}</span></div>${row(m.a,m.sa,wa?"w":"l")}${row(m.b,m.sb,wa?"l":"w")}<div class="bo${/win/.test(m.cls||"")?" win":""}">${m.out.replace(/^Perdente al n° (\d+)$/,(x,n)=>`${wa?m.b:m.a} rientra al n° ${n} dei perdenti`)}</div></div>`};
-const draw=(rounds)=>`<div class="bcols">${rounds.map((r,i)=>{const last=i===rounds.length-1;const grp=[];
-  if(r.k==="pair"&&!last){for(let j=0;j<r.m.length;j+=2)grp.push(`<div class="bgrp pair"><div class="bslot">${card(r.m[j])}</div><div class="bslot">${card(r.m[j+1])}</div></div>`)}
-  else r.m.forEach(m=>grp.push(`<div class="bgrp single"><div class="bslot">${card(m)}</div></div>`));
-  return `<div class="bcol${last?" last":""}"><h4>${r.t}</h4><div class="bbody">${grp.join("")}</div></div>`}).join("")}</div>`;
-document.getElementById("bp-v").innerHTML=draw(V);
-document.getElementById("bp-p").innerHTML=draw(P);
-document.getElementById("bp-f").innerHTML=`<div class="bfin">
- <div class="bcard"><h4>Prima semifinale</h4><div class="vs"><span>BZ Zanchi (V1)</span><span>contro</span><span>Caffè Ambrosia (P2)</span></div><ul><li>Andata, ven 26/6: <b class="sc">7-4</b></li><li>Ritorno, lun 29/6: <b class="sc">2-1</b></li></ul><div class="res">In finale: <b>BZ Zanchi</b></div></div>
- <div class="bcard"><h4>Seconda semifinale</h4><div class="vs"><span>Tecnocasa (V2)</span><span>contro</span><span>Immobiliare ML (P1)</span></div><ul><li>Andata, ven 26/6: <b class="sc">3-1</b></li><li>Ritorno, lun 29/6: <b class="sc">3-2</b></li></ul><div class="res">In finale: <b>Tecnocasa</b></div></div>
- <div class="bcard"><h4>Finale 3°/4° posto</h4><div class="vs"><span>Immobiliare ML</span><span>5-3</span><span>Caffè Ambrosia</span></div><ul><li>Mer 1/7 · 21:10</li></ul><div class="res">3° posto: <b>Immobiliare ML Castrezzato</b></div></div>
- <div class="bcard gold"><h4>Finalissima 1°/2°</h4><div class="vs"><span>Tecnocasa</span><span>6-5</span><span>BZ Zanchi</span></div><ul><li>Mer 1/7 · 22:00</li></ul><div class="res">Vincitrice 2026: <b>Tecnocasa Prevalle</b>, terzo titolo con sei vittorie su sei</div></div>
-</div>`;
-const notes={v:"Partono tutte le 16 squadre. Chi perde rientra nel tabellone perdente al numero indicato.",p:"Chi perde nel tabellone perdente è eliminato. I due vincitori del 4° turno sono i semifinalisti P1 e P2.",f:"Semifinali in andata e ritorno: contano le vittorie, non la differenza reti. In parità si gioca l'extra time."};
-const show=k=>{["v","p","f"].forEach(x=>{document.getElementById("bp-"+x).hidden=x!==k;document.getElementById("bt-"+x).setAttribute("aria-selected",x===k)});document.getElementById("brk-note").textContent=notes[k]};
-["v","p","f"].forEach(k=>document.getElementById("bt-"+k).addEventListener("click",()=>show(k)));
-show("v");
+const r=(n,s,o,e)=>`<div class="tb-r ${o}"><span class="e">${e||""}</span><span class="n" title="${n}">${n}</span><span class="sc">${s}</span></div>`;
+const box=(m,win)=>{const [lab,d,h,a,sa,b,sb,ea,eb]=m;const wa=sa>sb;
+  const label=win?`La perdente rientra al <em>numero ${lab.replace("N° ","")}</em>`:`La perdente è <em>eliminata</em>`;
+  return `<div class="tb-lab">${label}</div><div class="tb-box">${r(a,sa,wa?"w":"l",ea)}${r(b,sb,wa?"l":"w",eb)}<div class="tb-d"><span>${win?`<span class="num">${lab}</span> · `:""}${d}</span><span>ore ${h}</span></div></div>`};
+const cols=(R,win)=>`<div class="tb-cols">${R.map((c,i)=>{const last=i===R.length-1,g=[];
+  if(c.k==="pair"&&!last){for(let j=0;j<c.m.length;j+=2)g.push(`<div class="tb-g pair"><div class="tb-sl">${box(c.m[j],win)}</div><div class="tb-sl">${box(c.m[j+1],win)}</div></div>`)}
+  else c.m.forEach(m=>g.push(`<div class="tb-g single"><div class="tb-sl">${box(m,win)}</div></div>`));
+  return `<div class="tb-col${last?" last":""}"><h4>${c.t}</h4><div class="tb-body">${g.join("")}</div></div>`}).join("")}</div>`;
+const sf=(t,a,ra,b,rb,legs,win)=>`<div class="tb-y"><h5>${t}</h5><div class="vs"><span class="${win===a?"w":""}">${a}</span><small>${ra}</small><span class="${win===b?"w":""}">${b}</span><small>${rb}</small></div><div class="legs">${legs}</div></div>`;
+document.getElementById("tb").innerHTML=
+ `<div class="tb-blk w"><h3 class="tb-t">Tabellone vincente</h3>${cols(W,true)}</div>`+
+ `<div class="tb-sf">${sf("Prima semifinale",BZ,"V1",CA,"P2","Andata ven 26/6: 7-4 · Ritorno lun 29/6: 2-1",BZ)}${sf("Seconda semifinale",TC,"V2",ML,"P1","Andata ven 26/6: 3-1 · Ritorno lun 29/6: 3-2",TC)}
+  <div class="tb-y"><h5>Finale 3°/4° posto</h5><div class="vs"><span class="w">${ML}</span><small>5</small><span>${CA}</span><small>3</small></div><div class="legs">Mercoledì 1 luglio · ore 21:10</div></div>
+  <div class="tb-y fin"><span class="cup">Vincitrice 2026: Tecnocasa</span><h5>Finalissima 1°/2° posto</h5><div class="vs"><span class="w">${TC}</span><small>6</small><span>${BZ}</span><small>5</small></div><div class="legs">Mercoledì 1 luglio · ore 22:00</div></div></div>`+
+ `<div class="tb-blk l"><h3 class="tb-t">Tabellone perdente</h3>${cols(L,false)}</div>`;
 })();
 /* Iscrizione */
-$("copy-num").addEventListener("click",()=>copy("335 213 789","Numero copiato"));
 $("copy-num2").addEventListener("click",()=>copy("339 303 2760","Numero copiato"));
 $("copy-mail").addEventListener("click",()=>copy("info@sportmc.it","Email copiata"));
 let msg="",subj="";
@@ -595,7 +573,7 @@ $("join").addEventListener("submit",e=>{
   if(miss.length){$("j-err").textContent="Manca "+miss.map(m=>m[1]).join(", ")+".";$("j-err").hidden=false;$(miss[0][0]).focus();return}
   $("j-err").hidden=true;
   msg=`Richiesta di iscrizione al Gran Notturno Maclodio\n\nSquadra: ${v("j-nome")}\nPaese o città: ${v("j-paese")}\nReferente: ${v("j-ref")}\nTelefono: ${v("j-tel")}${v("j-note")?"\nNote: "+v("j-note"):""}`;
-  $("j-text").textContent=msg;$("j-wa").href="https://wa.me/39335213789?text="+encodeURIComponent(msg);$("j-wa2").href="https://wa.me/393393032760?text="+encodeURIComponent(msg);subj="Richiesta di iscrizione Gran Notturno Maclodio - "+v("j-nome");$("j-gmail").href="https://mail.google.com/mail/?view=cm&to=info@sportmc.it&su="+encodeURIComponent(subj)+"&body="+encodeURIComponent(msg);$("j-mailto").href="mailto:info@sportmc.it?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(msg);$("j-outlook").href="https://outlook.live.com/mail/0/deeplink/compose?to=info@sportmc.it&subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(msg);$("j-out").hidden=false;$("j-wa").focus();
+  $("j-text").textContent=msg;$("j-wa2").href="https://wa.me/393393032760?text="+encodeURIComponent(msg);subj="Richiesta di iscrizione Gran Notturno Maclodio - "+v("j-nome");$("j-gmail").href="https://mail.google.com/mail/?view=cm&to=info@sportmc.it&su="+encodeURIComponent(subj)+"&body="+encodeURIComponent(msg);$("j-mailto").href="mailto:info@sportmc.it?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(msg);$("j-outlook").href="https://outlook.live.com/mail/0/deeplink/compose?to=info@sportmc.it&subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(msg);$("j-out").hidden=false;$("j-wa2").focus();
 });
 $("j-copy").addEventListener("click",()=>copy(msg,"Testo copiato"));
 $("j-mailcopy").addEventListener("click",()=>copy("A: info@sportmc.it\nOggetto: "+subj+"\n\n"+msg,"Email e testo copiati"));

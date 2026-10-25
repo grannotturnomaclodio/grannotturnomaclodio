@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Gran Notturno Maclodio</title>
+<meta property="og:title" content="Gran Notturno Maclodio">
+<meta property="og:description" content="Il torneo notturno di calcio a 6 dell'Oratorio di Maclodio, dal 1978. Formula, montepremi, albo d'oro, iscrizioni e diretta.">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="description" content="Gran Notturno Maclodio: il torneo notturno di calcio a 6 dell'Oratorio di Maclodio, dal 1978.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&display=swap">
+
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<style>
+/* Layout: manifesto da bacheca dell'oratorio — fasce piene alternate (ghiaccio / blu notte), titoli condensati enormi, colonna centrale di 1100px */
+:root{
+  --ice:#eef3fb; --paper:#ffffff; --ink:#0f2350; --ink-2:#3b4b72; --line:#d3ddef;
+  --royal:#1d4fa3; --night:#0b1a3e; --night-2:#132a5c; --on-night:#eaf0fb; --on-night-2:#a9b8d8;
+  --magenta:#d8106f; --magenta-soft:#fbe3ef;
+  --f-display:"Anton","Impact","Arial Narrow",sans-serif;
+  --f-body:"Archivo","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --r:12px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ice:#0d1733; --paper:#14214a; --ink:#eaf0fb; --ink-2:#a9b8d8; --line:#24356a;
+  --royal:#7ea6f2; --night:#060e24; --night-2:#0f1c40; --on-night:#eaf0fb; --on-night-2:#a9b8d8;
+  --magenta:#ff4fa0; --magenta-soft:#3a1430; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ice:#0d1733; --paper:#14214a; --ink:#eaf0fb; --ink-2:#a9b8d8; --line:#24356a;
+  --royal:#7ea6f2; --night:#060e24; --night-2:#0f1c40; --on-night:#eaf0fb; --on-night-2:#a9b8d8;
+  --magenta:#ff4fa0; --magenta-soft:#3a1430; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--ice);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--night)}
+.in{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--royal)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--magenta);outline-offset:2px}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:.95;margin:0;text-wrap:balance;letter-spacing:.005em}
+h2{font-size:clamp(40px,7vw,76px);text-transform:uppercase}
+h3{font-size:26px;text-transform:uppercase}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--magenta)}
+.lead{font-size:clamp(17px,2.2vw,20px);max-width:62ch;color:var(--ink-2);margin:0}
+p{max-width:68ch}
+.sec{padding-block:72px}
+.sec>.in{display:grid;gap:28px}
+.sec.night{background:var(--night);color:var(--on-night)}
+.sec.night .lead,.sec.night .muted{color:var(--on-night-2)}
+.sec.night a{color:#9fc0ff}
+.muted{color:var(--ink-2)}
+/* nav */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--night);color:var(--on-night)}
+nav.top .in{display:flex;align-items:center;gap:16px;padding-block:10px}
+nav.top .brand{font-family:var(--f-display);font-size:20px;letter-spacing:.02em;white-space:nowrap;color:var(--on-night);text-decoration:none}
+nav.top ul{display:flex;gap:4px;list-style:none;margin:0 0 0 auto;padding:0;overflow-x:auto;scrollbar-width:none}
+nav.top ul a{display:block;padding:6px 10px;border-radius:6px;color:var(--on-night-2);text-decoration:none;font-weight:600;font-size:14px;white-space:nowrap}
+nav.top ul a:hover{color:var(--on-night);background:var(--night-2)}
+@media (max-width:640px){nav.top .brand{display:none}nav.top ul{margin:0}}
+/* hero */
+.hero{padding-block:48px 64px;overflow:hidden}
+.hero .in{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:32px;align-items:center}
+@media (max-width:820px){.hero .in{grid-template-columns:1fr}.hero .crest{order:-1;max-width:340px}}
+.hero h1{font-size:clamp(58px,11vw,132px);text-transform:uppercase;color:var(--ink)}
+.hero h1 span{display:block;color:var(--royal)}
+.hero .crest{background:#ffffff;border-radius:24px;padding:22px 18px;box-shadow:0 18px 40px -22px rgba(11,26,62,.45);justify-self:center;width:100%}
+.hero .crest img{display:block;width:100%;height:auto}
+.hero-facts{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:6px}
+.hero-facts div{display:grid}
+.hero-facts b{font-family:var(--f-display);font-weight:400;font-size:44px;line-height:1;color:var(--magenta);font-variant-numeric:tabular-nums}
+.hero-facts span{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.hero .stack{display:grid;gap:22px;min-width:0}
+.anthem{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 16px 6px 6px;width:fit-content;max-width:100%}
+.anthem button{border:0;background:var(--magenta);color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;display:grid;place-items:center;flex:none}
+.anthem button svg{width:18px;height:18px}
+.anthem .t{display:grid;line-height:1.2}
+.anthem .t b{font-size:14px}
+.anthem .t small{font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.anthem .bar{width:120px;height:4px;border-radius:2px;background:var(--line);overflow:hidden}
+.anthem .bar i{display:block;height:100%;width:0;background:var(--magenta)}
+.notice{border-left:4px solid var(--magenta);background:var(--magenta-soft);padding:10px 14px;border-radius:0 8px 8px 0;font-weight:600;color:var(--ink)}
+/* formula */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:2px;background:var(--night-2);border:2px solid var(--night-2);border-radius:var(--r);overflow:hidden}
+.facts div{background:var(--night);padding:18px}
+.facts b{display:block;font-family:var(--f-display);font-weight:400;font-size:40px;line-height:1;color:var(--on-night)}
+.facts span{color:var(--on-night-2);font-size:14px}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:f}
+@media (max-width:760px){.flow{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.flow{grid-template-columns:1fr}}
+.flow div{border-top:3px solid var(--magenta);padding-top:12px;display:grid;gap:4px}
+.flow div::before{counter-increment:f;content:"Fase " counter(f);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--on-night-2)}
+.flow b{font-size:18px}
+.flow span{font-size:14px;color:var(--on-night-2)}
+.board{margin:0;display:grid;gap:8px}
+.board img{display:block;width:100%;height:auto;border-radius:var(--r);background:#fff}
+.board figcaption{font-size:14px;color:var(--on-night-2)}
+.video{border-radius:var(--r);overflow:hidden;background:#000;aspect-ratio:848/480;max-width:100%}
+.video video{display:block;width:100%;height:100%}
+/* montepremi */
+.prizes{display:grid;gap:12px}
+.prize{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px}
+.prize .pos{font-family:var(--f-display);font-size:56px;line-height:1;color:var(--ink);width:78px}
+.prize .pos sup{font-size:.45em;vertical-align:top}
+.prize .who{display:grid;min-width:0}
+.prize .who b{font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.prize .who span{color:var(--ink-2);font-size:15px}
+.prize .eur{font-family:var(--f-display);font-size:clamp(30px,5vw,48px);line-height:1;color:var(--magenta);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.prize .eur small{font-family:var(--f-body);font-weight:800;font-size:14px;color:var(--ink-2);margin-right:6px}
+.prize:first-child{border:2px solid var(--magenta)}
+.prize:first-child .pos{font-size:72px}
+@media (max-width:560px){.prize{grid-template-columns:auto minmax(0,1fr);row-gap:6px}.prize .eur{grid-column:1/-1;text-align:left}.prize .pos{width:auto}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-block;padding:6px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-weight:700;font-size:14px}
+/* albo */
+.albo-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px}
+.albo-head input{font:500 16px var(--f-body);padding:10px 14px;border-radius:8px;border:1px solid var(--night-2);background:var(--night-2);color:var(--on-night);width:min(320px,100%)}
+.albo-head input::placeholder{color:var(--on-night-2)}
+.decades{display:grid;gap:26px}
+.decade h3{font-size:22px;color:var(--on-night-2);margin-bottom:8px}
+.years{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:2px 18px}
+.yr{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;padding:9px 0;border-bottom:1px solid var(--night-2);align-items:baseline}
+.yr b{font-family:var(--f-display);font-weight:400;font-size:22px;color:#ff7dbb;font-variant-numeric:tabular-nums}
+.yr span{display:grid;min-width:0}
+.yr span strong{font-weight:600;overflow-wrap:anywhere}
+.yr span small{color:var(--on-night-2)}
+.yr.void b,.yr.void strong{color:var(--on-night-2);font-weight:400}
+.yr.last{background:linear-gradient(90deg,var(--night-2),transparent);padding-inline:8px;border-radius:6px}
+.multi{display:flex;flex-wrap:wrap;gap:8px}
+.multi span{background:var(--night-2);border-radius:999px;padding:6px 12px;font-size:14px}
+.multi span b{color:#ff7dbb;margin-right:6px}
+/* giovanili */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.cat{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:12px;align-content:start}
+.cat .meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.cat .gir{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cat .gir div{min-width:0}
+.cat .gir b{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--magenta)}
+.cat ul{margin:4px 0 0;padding:0;list-style:none;font-size:15px}
+.cat li{padding:2px 0}
+/* partecipanti */
+.teams{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:0 24px;margin:0;padding:0;list-style:none;counter-reset:t}
+.teams li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:8px;padding:10px 0;border-bottom:1px solid var(--line);font-weight:600;font-size:15px}
+.teams li::before{counter-increment:t;content:counter(t,decimal-leading-zero);font-family:var(--f-display);font-weight:400;color:var(--ink-2);font-size:18px}
+.teams li span{overflow-wrap:anywhere}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:16px;margin:0;padding:0;list-style:none}
+.gallery button{all:unset;cursor:pointer;display:grid;gap:8px;width:100%}
+.gallery button:focus-visible{outline:3px solid var(--magenta);outline-offset:3px;border-radius:var(--r)}
+.gallery img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--r);background:var(--line);transition:transform .2s}
+.gallery button:hover img{transform:scale(1.02)}
+.gallery span{font-weight:700;font-size:14px;line-height:1.3;overflow-wrap:anywhere}
+.gallery .win span::before{content:"Vincitrice 2026 · ";color:var(--magenta)}
+.lightbox{position:fixed;inset:0;z-index:40;background:rgba(4,10,26,.92);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lightbox figure{margin:0;display:grid;gap:12px;max-width:min(1200px,100%)}
+.lightbox img{max-width:100%;max-height:78vh;width:auto;height:auto;border-radius:8px;justify-self:center}
+.lightbox figcaption{color:#eaf0fb;font-weight:700;text-align:center}
+.lightbox .nav{display:flex;justify-content:center;gap:10px}
+.lightbox button{border:1px solid #a9b8d8;background:transparent;color:#eaf0fb;border-radius:8px;padding:8px 14px;font:700 14px var(--f-body);cursor:pointer}
+.tsp{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px}
+.tsp div{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--magenta);border-radius:var(--r);padding:16px;display:grid;gap:2px}
+.tsp small{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--magenta)}
+.tsp b{font-family:var(--f-display);font-weight:400;font-size:26px;line-height:1.05;text-transform:uppercase}
+.spwall{list-style:none;margin:0;padding:0;columns:4 210px;column-gap:28px}
+.spwall li{break-inside:avoid;padding:7px 0;border-bottom:1px solid var(--line);font-weight:700;font-size:14px;letter-spacing:.03em}
+.timeline{list-style:none;margin:0;padding:0;display:grid;gap:0;border-left:3px solid var(--line);margin-left:6px}
+.timeline li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;padding:18px 0 18px 22px;position:relative}
+.timeline li::before{content:"";position:absolute;left:-9px;top:26px;width:15px;height:15px;border-radius:50%;background:var(--magenta);border:3px solid var(--ice)}
+.timeline li>b{font-family:var(--f-display);font-weight:400;font-size:30px;line-height:1;color:var(--royal);font-variant-numeric:tabular-nums}
+.timeline h3{font-size:24px;margin-bottom:6px}
+.timeline p{margin:0}
+@media (max-width:600px){.timeline li{grid-template-columns:1fr;gap:6px}}
+.bomb{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:16px}
+.bomb p{margin:6px 0 0}
+.nums{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px}
+.nums li{display:grid;border-top:3px solid var(--magenta);padding-top:8px}
+.nums b{font-family:var(--f-display);font-weight:400;font-size:44px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.nums span{font-size:14px;color:var(--ink-2)}
+.mailbox{display:grid;gap:10px;border-top:1px dashed var(--line);padding-top:12px}
+/* regolamento */
+.rules{display:grid;gap:8px}
+details.rule{background:var(--paper);border:1px solid var(--line);border-radius:10px}
+details.rule summary{cursor:pointer;padding:14px 18px;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.rule summary::-webkit-details-marker{display:none}
+details.rule summary::after{content:"+";font-size:22px;line-height:1;color:var(--magenta)}
+details.rule[open] summary::after{content:"–"}
+details.rule ul{margin:0;padding:0 18px 16px 36px;display:grid;gap:6px}
+/* iscrizioni */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:32px;align-items:start}
+@media (max-width:820px){.split{grid-template-columns:1fr}}
+form.join{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:14px}
+form.join .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:480px){form.join .row2{grid-template-columns:1fr}}
+label{display:grid;gap:5px;font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--ink-2)}
+input,textarea{font:500 16px var(--f-body);color:var(--ink);background:var(--ice);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%;min-width:0}
+textarea{min-height:84px;resize:vertical}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:8px;padding:12px 18px;font:800 15px var(--f-body);cursor:pointer;text-decoration:none;letter-spacing:.02em}
+.btn.pri{background:var(--magenta);color:#fff}
+.btn.sec{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.wa{background:#1f8f4e;color:#fff}
+.out{display:grid;gap:10px;border-top:1px dashed var(--line);padding-top:14px}
+.out pre{white-space:pre-wrap;font:500 14px/1.5 var(--f-body);background:var(--ice);border-radius:8px;padding:12px;margin:0;user-select:all}
+.phone{font-family:var(--f-display);font-size:clamp(36px,6vw,54px);line-height:1;color:var(--ink);user-select:all;font-variant-numeric:tabular-nums}
+.steps{margin:0;padding-left:20px;display:grid;gap:8px}
+/* diretta e dove */
+.cards2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px}
+.card{background:var(--night-2);border-radius:var(--r);padding:24px;display:grid;gap:12px;align-content:start}
+.card .btn{width:fit-content}
+.btn.ghost{background:transparent;color:var(--on-night);border:1px solid var(--on-night-2)}
+footer{background:var(--night);color:var(--on-night-2);padding-block:36px;border-top:1px solid var(--night-2);font-size:14px}
+footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer b{color:var(--on-night)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--ice);padding:10px 16px;border-radius:8px;font-weight:700;z-index:30;max-width:calc(100% - 32px)}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Sezioni"><div class="in">
+  <a class="brand" href="#top">Gran Notturno Maclodio</a>
+  <ul>
+    <li><a href="#torneo">Il torneo</a></li>
+    <li><a href="#video">Video</a></li>
+    <li><a href="#montepremi">Montepremi</a></li>
+    <li><a href="#storia">Storia</a></li>
+    <li><a href="#albo">Albo d'oro</a></li>
+    <li><a href="#giovanili">Giovanili</a></li>
+    <li><a href="#regolamento">Regolamento</a></li>
+    <li><a href="#iscrizioni">Iscrizioni</a></li>
+    <li><a href="#diretta">Diretta</a></li>
+    <li><a href="#sponsor">Sponsor</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero" id="top"><div class="in">
+  <div class="stack">
+    <div class="eyebrow">Oratorio di Maclodio · Brescia · dal 1978</div>
+    <h1>Gran Notturno <span>Maclodio</span></h1>
+    <p class="lead">Il torneo notturno di calcio a 6 più longevo della provincia di Brescia. Sedici squadre, due partite a sera sotto i fari della "piccola Bombonera", e prima degli adulti i tornei giovanili.</p>
+    <div class="hero-facts">
+      <div><b>47</b><span>Edizioni giocate</span></div>
+      <div><b>16</b><span>Squadre</span></div>
+      <div><b>19.000 €</b><span>Montepremi totale 2026</span></div>
+    </div>
+    <div class="notice">La 48ª edizione è in preparazione: date e iscrizioni saranno annunciate qui.</div>
+    <div class="anthem">
+      <button type="button" id="play" aria-label="Ascolta l'inno"><svg viewBox="0 0 24 24" aria-hidden="true"><path id="play-ico" fill="currentColor" d="M8 5v14l11-7z"/></svg></button>
+      <div class="t"><b>L'inno del Gran Notturno</b><small id="atime">2:38</small></div>
+      <div class="bar" aria-hidden="true"><i id="abar"></i></div>
+      <audio id="inno" src="inno.mp3" preload="none"></audio>
+    </div>
+  </div>
+  <div class="crest"><img src="logo.png" alt="Stemma del Gran Notturno Maclodio: scudo a strisce blu e bianche con pallone alato e la data 1978" width="700" height="522"></div>
+</div></header>
+
+<section class="sec night" id="torneo"><div class="in">
+  <div><div class="eyebrow">La formula</div><h2>Due sconfitte<br>e sei fuori</h2></div>
+  <p class="lead">Eliminazione diretta con recupero dei perdenti: chi perde nel tabellone vincente ha una seconda possibilità nel tabellone perdente, e può ancora arrivare in finale.</p>
+  <div class="facts">
+    <div><b>6 + cambi</b><span>Giocatori in campo, 5 sostituzioni a partita</span></div>
+    <div><b>2 × 20'</b><span>Durata di ogni partita</span></div>
+    <div><b>21:10 · 22:00</b><span>Le due partite di ogni serata</span></div>
+    <div><b>16 serate</b><span>Dall'inizio di giugno ai primi di luglio</span></div>
+  </div>
+  <div class="flow">
+    <div><b>Tabellone vincente</b><span>14 partite. La perdente di ogni gara rientra nel tabellone perdente.</span></div>
+    <div><b>Tabellone perdente</b><span>Qui chi perde è eliminato. Ne escono i semifinalisti P1 e P2.</span></div>
+    <div><b>Semifinali</b><span>V1 contro P2 e V2 contro P1, in andata e ritorno. Contano le vittorie.</span></div>
+    <div><b>Finali</b><span>Nell'ultima serata: alle 21:10 il 3°/4° posto, alle 22:00 la finalissima.</span></div>
+  </div>
+  <figure class="board"><a href="tabellone-2026.jpg" target="_blank" rel="noopener"><img src="tabellone-2026.jpg" alt="Schema del tabellone dell'edizione 2026: tabellone vincente in alto, tabellone perdente in basso, semifinali e finali a destra" width="1600" height="1280" loading="lazy"></a>
+    <figcaption>Il tabellone dell'edizione 2026, con le date di tutte le serate. Tocca per ingrandirlo.</figcaption></figure>
+</div></section>
+
+<section class="sec" id="video"><div class="in">
+  <div><div class="eyebrow">Il video del torneo</div><h2>Una serata al Gran Notturno</h2></div>
+  <div class="video"><video controls preload="none" playsinline poster="promo-poster.jpg" width="848" height="480"><source src="promo.mp4" type="video/mp4">Il tuo browser non riproduce questo video.</video></div>
+  <p class="muted" style="margin:0">Il video promozionale del Gran Notturno, 2 minuti e mezzo di partite, pubblico e premiazioni.</p>
+</div></section>
+
+<section class="sec" id="montepremi" style="padding-top:0"><div class="in">
+  <div><div class="eyebrow">Montepremi dell'edizione 2026</div><h2>19.000 € in palio</h2></div>
+  <p class="lead" style="margin:0">Montepremi totale di 19.000 € più B.V., diviso fra i quattro trofei.</p>
+  <div class="prizes">
+    <div class="prize"><div class="pos">1<sup>°</sup></div><div class="who"><b>1° Trofeo</b><span>Casa del Filtro</span></div><div class="eur"><small>+ B.V.</small>12.000 €</div></div>
+    <div class="prize"><div class="pos">2<sup>°</sup></div><div class="who"><b>2° Trofeo</b><span>Gandellini Beniamino · SIAL Safety</span></div><div class="eur"><small>+ B.V.</small>3.500 €</div></div>
+    <div class="prize"><div class="pos">3<sup>°</sup></div><div class="who"><b>3° Trofeo</b><span>Autotrasporti G. Mondini</span></div><div class="eur"><small>+ B.V.</small>2.000 €</div></div>
+    <div class="prize"><div class="pos">4<sup>°</sup></div><div class="who"><b>4° Trofeo</b><span>Il Pane di Anna</span></div><div class="eur"><small>+ B.V.</small>1.500 €</div></div>
+  </div>
+  <div class="chips"><span class="chip">Miglior giocatore</span><span class="chip">Miglior portiere</span><span class="chip">Capocannoniere</span></div>
+  <p class="muted">Il montepremi della 48ª edizione sarà comunicato insieme alle iscrizioni.</p>
+</div></section>
+
+<section class="sec" id="storia" style="border-top:1px solid var(--line)"><div class="in">
+  <div><div class="eyebrow">La storia</div><h2>Quasi mezzo secolo sotto i fari</h2></div>
+  <p class="lead">Dal 1978 il campo dell'oratorio di Maclodio si accende ogni estate per il Gran Notturno. Le edizioni giocate sono 47: si è fermato soltanto per il COVID.</p>
+  <ol class="timeline">
+    <li><b>1978</b><div><h3>Il primo fischio</h3><p>Il torneo nasce sul campo dell'oratorio. La prima edizione la vince Berlingo.</p></div></li>
+    <li><b>Anni '80</b><div><h3>Le prime dinastie</h3><p>Il Ristorante Delfino di Orzinuovi vince le edizioni del 1979 e del 1980. Poi tocca a Cantamessa di Maclodio (1981 e 1982) e al Raviolificio Terry di Longhena (1983 e 1984). Autotrasporti Mondini, di Maclodio, vince nel 1985 e nel 1987: lo stesso nome nel 2026 mette in palio il 3° trofeo.</p></div></li>
+    <li><b>1991</b><div><h3>Il titolo resta in paese</h3><p>La Pro Maclodio vince il torneo di casa.</p></div></li>
+    <li><b>2000–2019</b><div><h3>Il torneo si allarga</h3><p>L'albo d'oro si riempie di squadre da fuori provincia: La 6 di Bergamo vince tre volte (2008, 2012, 2013), The World Company porta il titolo a Milano nel 2009 e nel 2017 vince S.O.T., arrivata dalla Svizzera.</p></div></li>
+    <li><b>2020–2021</b><div><h3>Lo stop</h3><p>Due edizioni sospese per il COVID. Il Gran Notturno riparte nel 2022.</p></div></li>
+    <li><b>2023–2026</b><div><h3>La grande rivalità</h3><p>Tecnocasa vince nel 2023 e nel 2024, la seconda volta battendo 4-3 l'Edil Gea di Castrezzato con il gol decisivo allo scadere. Nel 2025 la stessa squadra, diventata Immobiliare ML, si prende la rivincita in finale proprio contro Tecnocasa. Nel 2026 Tecnocasa torna sul trono per la terza volta: sei partite, sei vittorie e il 6-5 in finale su BZ Zanchi di Ospitaletto.</p></div></li>
+  </ol>
+  <div class="bomb">
+    <div><h3>La "piccola Bombonera"</h3><p>Prima di ogni edizione i volontari dell'oratorio ridipingono gli spogliatoi e curano il campo. Giocatori e sponsor arrivano ormai anche da Emilia-Romagna e Veneto.</p></div>
+    <ul class="nums">
+      <li><b>221</b><span>Gol segnati nell'edizione 2026</span></li>
+      <li><b>16</b><span>Serate, e i fuochi d'artificio la sera della finale</span></li>
+    </ul>
+    <p class="muted" style="margin:0">La serata inaugurale del 2026 si è aperta con l'amichevole fra le vecchie glorie del Brescia e una rappresentativa della Curva Nord, in ricordo di Evaristo Beccalossi.</p>
+  </div>
+</div></section>
+
+<section class="sec night" id="albo"><div class="in">
+  <div><div class="eyebrow">Albo d'oro</div><h2>Dal 1978 a oggi</h2></div>
+  <div class="decades" id="decades"></div>
+</div></section>
+
+<section class="sec" id="giovanili"><div class="in">
+  <div><div class="eyebrow">Tornei giovanili · edizione 2026</div><h2>Prima dei grandi</h2></div>
+  <p class="lead">Ogni sera, prima delle due partite degli adulti, scendono in campo i ragazzi. Tornei a 9 giocatori, con gironi e finali nelle ultime serate.</p>
+  <div class="cats" id="cats"></div>
+</div></section>
+
+<section class="sec" id="partecipanti" style="padding-top:0"><div class="in">
+  <div><div class="eyebrow">Le squadre dell'edizione 2026</div><h3 style="font-size:40px">Partecipanti 2026</h3></div>
+  <p class="lead" style="margin:0">Le 16 squadre dell'ultima edizione nelle foto ufficiali. Tocca una foto per vederla in grande.</p>
+  <ul class="gallery" id="teams"></ul>
+</div></section>
+
+<section class="sec night" id="regolamento"><div class="in">
+  <div><div class="eyebrow">Regolamento in breve</div><h2>Le regole del campo</h2></div>
+  <p class="lead">Una sintesi del regolamento dell'edizione 2026. Per ogni caso particolare decide la Direzione del torneo.</p>
+  <div class="rules" style="color:var(--ink)">
+    <details class="rule" open><summary>Squadre e tesserati</summary><ul>
+      <li>Il torneo è aperto a tutte le squadre, con giocatori professionisti e dilettanti.</li>
+      <li>Il nome può contenere fino a 4 sponsor, seguiti da un unico paese o città.</li>
+      <li>Tesseramenti illimitati. Dalle semifinali in poi ogni nuovo cartellino costa 10 €.</li>
+      <li>Nessun giocatore o dirigente può giocare per due squadre diverse nello stesso torneo.</li>
+      <li>In distinta solo con un documento di riconoscimento valido.</li>
+    </ul></details>
+    <details class="rule"><summary>Le partite</summary><ul>
+      <li>6 giocatori in campo, 40 minuti in due tempi da 20.</li>
+      <li>5 sostituzioni a partita, a gioco fermo, anche nei supplementari.</li>
+      <li>Fino alle semifinali ogni partita ha un vincitore: in parità si gioca un supplementare da 7', poi i rigori.</li>
+      <li>Chi non si presenta entro 20 minuti dall'orario previsto perde a tavolino.</li>
+    </ul></details>
+    <details class="rule"><summary>Disciplina</summary><ul>
+      <li>Alla terza ammonizione scatta una giornata di squalifica, da scontare nella partita successiva.</li>
+      <li>Il giocatore espulso può essere sostituito da una riserva non ancora entrata, una sola volta a partita.</li>
+      <li>Ammesse negli spogliatoi solo le persone in distinta e il presidente della squadra.</li>
+    </ul></details>
+    <details class="rule"><summary>Semifinali e finali</summary><ul>
+      <li>Semifinali in andata e ritorno, che possono finire in parità. La differenza reti non conta.</li>
+      <li>Con una vittoria per parte, o due pareggi, si gioca l'extra time: una nuova partita di 2 × 7', poi i rigori.</li>
+      <li>Finale 3°/4° posto: in parità subito i rigori.</li>
+      <li>Finalissima: in parità due supplementari da 7', poi i rigori.</li>
+    </ul></details>
+  </div>
+</div></section>
+
+<section class="sec" id="iscrizioni"><div class="in">
+  <div><div class="eyebrow">Iscrizioni</div><h2>Porta la tua squadra a Maclodio</h2></div>
+  <div class="split">
+    <div style="display:grid;gap:18px">
+      <p class="lead" style="margin:0">Le iscrizioni si raccolgono su WhatsApp o via email. Le squadre dell'edizione precedente hanno diritto di prelazione.</p>
+      <div><div class="eyebrow" style="color:var(--ink-2)">WhatsApp iscrizioni e informazioni</div><div class="phone">335 213 789</div><div class="phone">339 303 2760</div></div>
+      <div><div class="eyebrow" style="color:var(--ink-2)">Email iscrizioni</div><div class="phone" style="font-size:clamp(26px,4.5vw,38px)">info@sportmc.it</div></div>
+      <ol class="steps">
+        <li>Compila la richiesta qui accanto.</li>
+        <li>Invia il messaggio già pronto su WhatsApp o per email a info@sportmc.it.</li>
+        <li>L'organizzazione ti ricontatta per confermare il posto.</li>
+      </ol>
+      <div style="display:flex;flex-wrap:wrap;gap:10px"><button class="btn sec" type="button" id="copy-num">Copia 335 213 789</button><button class="btn sec" type="button" id="copy-num2">Copia 339 303 2760</button><button class="btn sec" type="button" id="copy-mail">Copia l'email</button></div>
+    </div>
+    <form class="join" id="join" novalidate>
+      <label for="j-nome">Nome della squadra<input id="j-nome" required placeholder="Fino a 4 sponsor + paese o città"></label>
+      <label for="j-paese">Paese o città<input id="j-paese" required></label>
+      <div class="row2">
+        <label for="j-ref">Referente<input id="j-ref" required autocomplete="name"></label>
+        <label for="j-tel">Telefono del referente<input id="j-tel" type="tel" required autocomplete="tel"></label>
+      </div>
+      <label for="j-note">Note<textarea id="j-note" placeholder="es. abbiamo giocato nell'edizione 2026"></textarea></label>
+      <p class="muted" id="j-err" hidden style="margin:0;color:var(--magenta);font-weight:700"></p>
+      <div><button class="btn pri" type="submit">Prepara la richiesta</button></div>
+      <div class="out" id="j-out" hidden>
+        <pre id="j-text"></pre>
+        <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn wa" id="j-wa" href="https://wa.me/39335213789" target="_blank" rel="noopener">Invia al 335 213 789</a><a class="btn wa" id="j-wa2" href="https://wa.me/393393032760" target="_blank" rel="noopener">Invia al 339 303 2760</a><button class="btn sec" type="button" id="j-copy">Copia il testo</button></div>
+        <div class="mailbox"><b>Oppure per email a info@sportmc.it</b>
+          <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn pri" id="j-gmail" href="https://mail.google.com/mail/?view=cm&amp;to=info@sportmc.it" target="_blank" rel="noopener">Scrivi con Gmail</a><a class="btn pri" id="j-outlook" href="https://outlook.live.com/mail/0/deeplink/compose?to=info@sportmc.it" target="_blank" rel="noopener">Scrivi con Outlook</a><a class="btn sec" id="j-mailto" href="mailto:info@sportmc.it">Altro programma di posta</a><button class="btn sec" type="button" id="j-mailcopy">Copia email e testo</button></div>
+          <span class="muted" style="font-size:14px">Se nessun pulsante funziona, copia email e testo e incollali in un nuovo messaggio.</span></div>
+        <p class="muted" style="margin:0;font-size:14px">Se WhatsApp o l'email non si aprono, copia il testo e mandalo al 335 213 789, al 339 303 2760 o a info@sportmc.it.</p>
+      </div>
+    </form>
+  </div>
+</div></section>
+
+<section class="sec night" id="diretta"><div class="in">
+  <div><div class="eyebrow">Diretta e dove siamo</div><h2>Allo stadio o in streaming</h2></div>
+  <div class="cards2">
+    <div class="card"><h3>In diretta streaming</h3><p style="margin:0">Tutte le partite sono trasmesse in streaming sul sito del Giornale di Brescia, con la telecronaca di Marco Zanetti, e seguite in diretta da Radio Bresciasette.</p>
+      <a class="btn ghost" href="https://www.giornaledibrescia.it" target="_blank" rel="noopener">Vai al Giornale di Brescia</a></div>
+    <div class="card"><h3>Campo dell'Oratorio</h3><p style="margin:0">Il Gran Notturno si gioca sul campo dell'Oratorio di Maclodio (BS), la "piccola Bombonera". Partite alle 21:10 e alle 22:00, giovanili dalle 19:30.</p>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Oratorio+di+Maclodio" target="_blank" rel="noopener">Apri in Google Maps</a></div>
+  </div>
+</div></section>
+
+<section class="sec" id="sponsor"><div class="in">
+  <div><div class="eyebrow">Sponsor dell'edizione 2026</div><h2>Grazie a chi ci sostiene</h2></div>
+  <p class="lead" style="margin:0">Il Gran Notturno esiste grazie alle aziende, alle associazioni e agli enti del territorio che lo sostengono ogni estate.</p>
+  <div><p class="muted" style="margin:0 0 10px;font-weight:700">Sponsor dei trofei</p>
+  <div class="tsp">
+    <div><small>1° Trofeo</small><b>Casa del Filtro</b></div>
+    <div><small>2° Trofeo</small><b>Gandellini Beniamino</b><b>SIAL Safety</b></div>
+    <div><small>3° Trofeo</small><b>Autotrasporti Mondini</b></div>
+    <div><small>4° Trofeo</small><b>Il Pane di Anna</b></div>
+  </div></div>
+  <figure class="board"><a href="backdrop-2026.jpg" target="_blank" rel="noopener"><img src="backdrop-2026.jpg" alt="Backdrop delle interviste del 47° Gran Notturno Maclodio con i loghi degli sponsor" width="1005" height="669" loading="lazy"></a>
+    <figcaption style="color:var(--ink-2)">Il backdrop delle interviste dell'edizione 2026 con i loghi degli sponsor. Tocca per ingrandirlo.</figcaption></figure>
+  <ul class="spwall" id="spwall"></ul>
+  <p class="muted" style="margin:0">Vuoi sostenere la prossima edizione? Scrivi su WhatsApp al 335 213 789.</p>
+</div></section>
+
+<footer><div class="in">
+  <div><b>Gran Notturno Maclodio</b> · Oratorio di Maclodio (BS) · dal 1978</div>
+  <div>#GranNotturnoMaclodio #Maclodio #TorneoEstivo</div>
+</div></footer>
+<div class="toast" id="toast" hidden></div>
+<div class="lightbox" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto della squadra"><figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption>
+  <div class="nav"><button type="button" id="lb-prev">Precedente</button><button type="button" id="lb-close">Chiudi</button><button type="button" id="lb-next">Successiva</button></div></figure></div>
+
+<script>
+(function(){
+"use strict";
+const ALBO=[[2026,"Tecnocasa - Fc Immobiliare - Bosco Regio - Franzoni Costruzioni","Prevalle"],[2025,"Immobiliare ML","Castrezzato"],[2024,"Tecnocasa - Fc Immobiliare - Bosco Regio - Csb","Leno"],[2023,"Tecnocasa - Fc Immobiliare - Csb - Rilegno","Leno"],[2022,"Pe.Pi Coffee e more - Imp. Edile Andreis Pietro","Rodengo Saiano"],[2021,null,null],[2020,null,null],[2019,"Las Vegas By Play Park","Salò"],[2018,"Las Vegas By Play Park","Salò"],[2017,"S.O.T.","Svizzera"],[2016,"Arte Kromo","Lumezzane"],[2015,"Arte Kromo","Lumezzane"],[2014,"Trattoria Alpini","Ospitaletto"],[2013,"La 6","Bergamo"],[2012,"La 6","Bergamo"],[2011,"Carrozzeria Prestini","Trenzano"],[2010,"Santi Inox","Travagliato"],[2009,"The World Company","Milano"],[2008,"La 6","Bergamo"],[2007,"Il bello dell'arte","Rudiano"],[2006,"Punto Snai Palazzolo","Palazzolo"],[2005,"Rocca Costruzioni","Chiari"],[2004,"Cantine Franciacorta","Erbusco"],[2003,"Bar Eminguey","Chiari"],[2002,"Impresa Edile Imerio","Trenzano"],[2001,"New Castel","Castelcovati"],[2000,"Nicolini","Castrezzato"],[1999,"Arredamenti Paini","Flero"],[1998,"Camiceria New Time","Ome"],[1997,"Nicolini","Castrezzato"],[1996,"Arredamenti Paini","Flero"],[1995,"Mi.Flor","Trenzano"],[1994,"Impresa Edile Imerio","Castrezzato"],[1993,"Impresa Edile Imerio","Castrezzato"],[1992,"Pasticceria Pagani","Dello"],[1991,"Pro - Maclodio","Maclodio"],[1990,"Salumificio Greci","Brandico"],[1989,"Number One","Cortefranca"],[1988,"Forni Ceky","Trenzano"],[1987,"Autotrasporti Mondini","Maclodio"],[1986,"Word Black","Maclodio"],[1985,"Autotrasporti Mondini","Maclodio"],[1984,"Raviolificio Terry","Longhena"],[1983,"Raviolificio Terry","Longhena"],[1982,"Cantamessa","Maclodio"],[1981,"Cantamessa","Maclodio"],[1980,"Ristorante Delfino","Orzinuovi"],[1979,"Ristorante Delfino","Orzinuovi"],[1978,"Berlingo","Berlingo"]];
+const TEAMS2026=["VI.BI. Elettrorecuperi - Piamborno","Tecnocasa – FC Immobiliare – Bosco Regio – Franzoni Costruzioni - Prevalle","L'Immobiliare - Castelcovati","Immobiliare ML - Castrezzato","Imbalplast - Soncino","Autodemolizioni Buffoli - Concessionaria Diesel 80 - Carrozzeria Grazioli - La Torre Case - Trenzano","Caffè Ambrosia - Polo Glass - Sottotiro - Lograto","BZ di Zanchi Luca - BT Sollevo - Ospitaletto","Bovisasca Milano SP Trasporti - RA Saldature - Cinisello Balsamo","Bar Tabaccheria Tre Ponti - 5Intermediari - Rezzato","Bar Milano 2 - F.O.P Carrozzeria - Carmagnola Garden - Orzinuovi","Alta Serbatoi dal 1955 - Brescia","Alice Costruzioni & I.M.R Refrattari - Chiari","Lancellotti Bi-Elle Forklift - Contesini Materiali Edili - Fildent - Gavardo","AC Costruzioni Edili + Colonna + BMG Riparazioni - Comezzano-Cizzago","Q People Café - Passirano"];
+const SPONSOR=["ACQUA SAN BERNARDO", "AGENZIA ZANETTI AUTOTRASPORTI", "ALICE COSTRUZIONI", "AMBULANZA TRENZANO", "ARCOBALENO IMPRESA PULIZIE", "ARM", "ARVEN", "AUDEMA AUDIO", "AUTOTRASPORTI ANTONIOLI", "AUTOTRASPORTI CARULLI", "CAFFE' AMBROSIA", "CARMAGNOLA GARDEN", "CARROZZERIA GRAZIOLI", "COMUNE MACLODIO", "CORTESI - SERVI SRL", "DAC", "DIESEL 80", "DTM", "EDIL STILE", "FILIPPINI SCOOTER", "FLEMING TECNA", "FORNONI IMPIANTI ELETTRICI", "FRANCHI & KIM", "GHELFI", "GLASS DRIVE", "GRUPPO ALPINI MACLODIO - LOGRATO", "GRUPPO ITALTELO", "GUERRINI NOLEGGIO", "IL PASTAIO", "IMBALPLAST SRL", "IMMOBILIARE FASANA", "IMR REFRATTARI", "ING. RESCONI CRISTIAN", "INVERARDI AUTORIPARAZIONI", "LAZZARONI E QUARESMINI", "LINEA NATURA", "LINEA STAMPI", "MAK 1", "MEDIOLANUM", "ONGARO FABRIZIO", "ONORANZE FUNEBRI ZAMMARCHI", "PARI ARREDAMENTI", "PIER MODE", "PMF COSTRUZIONI", "PRANDELLI DRINK SYSTEM", "PROXIM", "RACCORDERIA OB", "RINALDI LAVORAZIONE LAMIERE", "RISTORANTE SOTTOTIRO", "STUDIO CAPITANIO", "VITALI GOMME", "ZERBINI SIMONE"];
+const CATS=[
+ {nome:"Elite 2014/15",ora:"20:30",fin:"Semifinali incrociate, finale 3°/4° e finalissima",g:[["Girone Verde",["Rigamonti","Union Brescia","Pro Palazzolo","Voluntas Mont."]],["Girone Azzurro",["Ospitaletto","Orceana","Voluntas BS","Rovato"]]]},
+ {nome:"Locali 2015/16",ora:"20:00",fin:"Finali per il 1°/2°, 3°/4° e 5°/6° posto",g:[["Girone A",["Maclodio","Orceana","Torbole Casaglia"]],["Girone B",["Rovato","Nuova S. Paolo","Concesio"]]]},
+ {nome:"Locali 2017/18",ora:"20:00",fin:"Finali per il 1°/2°, 3°/4° e 5°/6° posto",g:[["Girone A",["Maclodio","Rovato","Castrezzato"]],["Girone B",["Orceana","Nuova S. Paolo","Lograto"]]]}
+];
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function toast(m){const t=$("toast");t.textContent=m;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>t.hidden=true,2600)}
+async function copy(text,ok){try{await navigator.clipboard.writeText(text);toast(ok)}catch(e){toast("Copia non riuscita: seleziona il testo a mano")}}
+
+/* Albo d'oro */
+function renderAlbo(){
+  const by={};ALBO.forEach(r=>{const d=Math.floor(r[0]/10)*10;(by[d]=by[d]||[]).push(r)});
+  $("decades").innerHTML=Object.keys(by).sort((a,b)=>b-a).map(d=>`<div class="decade"><h3>Anni ${String(d).slice(2)}${d==="2020"?" e oggi":""}</h3><div class="years">${by[d].map(([y,s,l])=>s?`<div class="yr ${y===2026?"last":""}"><b>${y}</b><span><strong>${esc(s)}</strong><small>${esc(l)}</small></span></div>`:`<div class="yr void"><b>${y}</b><span><strong>Sospeso per COVID</strong></span></div>`).join("")}</div></div>`).join("");
+}
+renderAlbo();
+
+/* Giovanili e partecipanti */
+$("cats").innerHTML=CATS.map(c=>`<article class="cat"><h3>${esc(c.nome)}</h3><div class="meta"><span>A 9 giocatori</span><span>Inizio ${esc(c.ora)}</span><span>${c.g.reduce((n,g)=>n+g[1].length,0)} squadre</span></div>
+  <div class="gir">${c.g.map(([n,t])=>`<div><b>${esc(n)}</b><ul>${t.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`).join("")}</div><p class="muted" style="margin:0;font-size:14px">${esc(c.fin)}</p></article>`).join("");
+const ph=i=>"squadre/s"+String(i+1).padStart(2,"0")+".jpg";
+$("teams").innerHTML=TEAMS2026.map((t,i)=>`<li${i===1?' class="win"':""}><button type="button" data-ph="${i}"><img src="${ph(i)}" alt="Foto della squadra ${esc(t)}" loading="lazy" width="1200" height="800"><span>${esc(t)}</span></button></li>`).join("");
+$("spwall").innerHTML=SPONSOR.map(n=>`<li>${esc(n)}</li>`).join("");
+let cur=0;const lb=$("lb");
+function show(i){cur=(i+TEAMS2026.length)%TEAMS2026.length;$("lb-img").src=ph(cur);$("lb-img").alt="Foto della squadra "+TEAMS2026[cur];$("lb-cap").textContent=TEAMS2026[cur];lb.hidden=false;document.body.style.overflow="hidden";$("lb-close").focus()}
+function hide(){lb.hidden=true;document.body.style.overflow="";const b=document.querySelector('[data-ph="'+cur+'"]');b&&b.focus()}
+$("teams").addEventListener("click",e=>{const b=e.target.closest("[data-ph]");if(b)show(+b.dataset.ph)});
+$("lb-close").addEventListener("click",hide);$("lb-prev").addEventListener("click",()=>show(cur-1));$("lb-next").addEventListener("click",()=>show(cur+1));
+lb.addEventListener("click",e=>{if(e.target===lb)hide()});
+document.addEventListener("keydown",e=>{if(lb.hidden)return;if(e.key==="Escape")hide();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+
+/* Inno */
+const a=$("inno"),ico=$("play-ico"),fmt=s=>Math.floor(s/60)+":"+String(Math.floor(s%60)).padStart(2,"0");
+$("play").addEventListener("click",()=>{if(a.paused){a.play().catch(()=>toast("Audio non disponibile in questa vista"))}else a.pause()});
+a.addEventListener("play",()=>{ico.setAttribute("d","M6 5h4v14H6zM14 5h4v14h-4z");$("play").setAttribute("aria-label","Metti in pausa l'inno")});
+a.addEventListener("pause",()=>{ico.setAttribute("d","M8 5v14l11-7z");$("play").setAttribute("aria-label","Ascolta l'inno")});
+a.addEventListener("timeupdate",()=>{if(a.duration){$("abar").style.width=(a.currentTime/a.duration*100)+"%";$("atime").textContent=fmt(a.currentTime)+" / "+fmt(a.duration)}});
+
+/* Iscrizione */
+$("copy-num").addEventListener("click",()=>copy("335 213 789","Numero copiato"));
+$("copy-num2").addEventListener("click",()=>copy("339 303 2760","Numero copiato"));
+$("copy-mail").addEventListener("click",()=>copy("info@sportmc.it","Email copiata"));
+let msg="",subj="";
+$("join").addEventListener("submit",e=>{
+  e.preventDefault();
+  const v=id=>$(id).value.trim();
+  const miss=[["j-nome","il nome della squadra"],["j-paese","il paese o la città"],["j-ref","il referente"],["j-tel","il telefono"]].filter(([id])=>!v(id));
+  if(miss.length){$("j-err").textContent="Manca "+miss.map(m=>m[1]).join(", ")+".";$("j-err").hidden=false;$(miss[0][0]).focus();return}
+  $("j-err").hidden=true;
+  msg=`Richiesta di iscrizione al Gran Notturno Maclodio\n\nSquadra: ${v("j-nome")}\nPaese o città: ${v("j-paese")}\nReferente: ${v("j-ref")}\nTelefono: ${v("j-tel")}${v("j-note")?"\nNote: "+v("j-note"):""}`;
+  $("j-text").textContent=msg;$("j-wa").href="https://wa.me/39335213789?text="+encodeURIComponent(msg);$("j-wa2").href="https://wa.me/393393032760?text="+encodeURIComponent(msg);subj="Richiesta di iscrizione Gran Notturno Maclodio - "+v("j-nome");$("j-gmail").href="https://mail.google.com/mail/?view=cm&to=info@sportmc.it&su="+encodeURIComponent(subj)+"&body="+encodeURIComponent(msg);$("j-mailto").href="mailto:info@sportmc.it?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(msg);$("j-outlook").href="https://outlook.live.com/mail/0/deeplink/compose?to=info@sportmc.it&subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(msg);$("j-out").hidden=false;$("j-wa").focus();
+});
+$("j-copy").addEventListener("click",()=>copy(msg,"Testo copiato"));
+$("j-mailcopy").addEventListener("click",()=>copy("A: info@sportmc.it\nOggetto: "+subj+"\n\n"+msg,"Email e testo copiati"));
+})();
+</script>
+
+</body>
+</html>

@@ -249,6 +249,46 @@ nav.top .in{position:relative}
 .lg{display:inline-block;width:16px;height:12px;border-radius:3px;border:1px solid #0f2350}.lg.v{background:#cfeeb4}.lg.p{background:#f8c9c9}
 .lg-n{font-family:var(--f-display);font-weight:400;font-size:14px;color:#fff;background:#d93a3a;border-radius:4px;padding:0 5px}
 @media (max-width:720px){.tb{padding:16px 18px;gap:22px 30px}.tb-t{font-size:26px}}
+
+/* ===== Ritocco grafico ===== */
+.hero{position:relative;overflow:hidden;color:var(--on-night);padding-block:56px 72px;
+  background:
+   radial-gradient(60% 55% at 12% -8%,rgba(255,255,255,.22),rgba(255,255,255,0) 60%),
+   radial-gradient(55% 50% at 92% -10%,rgba(255,255,255,.18),rgba(255,255,255,0) 60%),
+   linear-gradient(180deg,#081433 0%,#0f2350 55%,#163a7a 100%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;pointer-events:none;
+  background:repeating-linear-gradient(90deg,rgba(46,140,70,.32) 0 70px,rgba(46,140,70,.2) 70px 140px);
+  -webkit-mask:linear-gradient(180deg,transparent,#000);mask:linear-gradient(180deg,transparent,#000)}
+.hero .in{position:relative;z-index:1;grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr);gap:40px}
+.hero .eyebrow{color:#ff8fc3}
+.hero h1{color:#fff;font-size:clamp(52px,8.4vw,104px);text-shadow:0 6px 30px rgba(0,0,0,.35)}
+.hero h1 span{color:#8fb4ff}
+.hero .lead{color:#c9d5ee}
+.hero-facts{gap:12px}
+.hero-facts div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:10px 16px;backdrop-filter:blur(2px)}
+.hero-facts b{color:#ff5fa8}
+.hero-facts span{color:#c9d5ee}
+.hero .crest{background:#fff;border-radius:28px;padding:26px 22px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6),0 0 0 6px rgba(255,255,255,.08);transform:rotate(-2deg)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px}
+.hero-cta .btn{font-size:16px;padding:14px 22px}
+.btn.light{background:#fff;color:#0f2350}
+.btn.outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+.hero-social a{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3);color:#fff}
+.hero-social a:hover{background:rgba(255,255,255,.16)}
+.next-ed{box-shadow:0 16px 36px -14px rgba(255,79,160,.75)}
+@media (max-width:820px){.hero{padding-block:28px 64px}.hero .in{grid-template-columns:1fr;gap:22px}.hero .crest{order:-1;max-width:240px;transform:rotate(-2deg)}}
+h2{font-size:clamp(38px,5.6vw,66px)}
+.sec .eyebrow:has(+ h2){display:inline-flex;align-items:center;gap:10px}
+.sec .eyebrow:has(+ h2)::before{content:"";width:28px;height:3px;border-radius:2px;background:currentColor}
+#iscrizioni,#storia,#giovanili,#sponsor{background:var(--paper)}
+#iscrizioni form.join{background:var(--ice)}
+#iscrizioni form.join input,#iscrizioni form.join textarea{background:var(--paper)}
+.prize{box-shadow:0 10px 24px -18px rgba(11,26,62,.45);transition:transform .15s}
+.prize:hover{transform:translateY(-2px)}
+.cat,.tsp div,.bomb{box-shadow:0 10px 24px -20px rgba(11,26,62,.5)}
+.gallery img{box-shadow:0 8px 18px -12px rgba(11,26,62,.55)}
+.card{border:1px solid rgba(255,255,255,.08)}
+footer{background:#060f27}
 /* regolamento */
 .rules{display:grid;gap:8px}
 details.rule{background:var(--paper);border:1px solid var(--line);border-radius:10px}
@@ -307,13 +347,14 @@ footer b{color:var(--on-night)}
   <div class="stack">
     <div class="eyebrow">Oratorio di Maclodio · Comune di Maclodio · Provincia di Brescia · dal 1978</div>
     <h1>Gran Notturno <span>Maclodio</span></h1>
+    <div class="next-ed" role="status"><span class="dot" aria-hidden="true"></span><span>La 48ª edizione è in preparazione</span></div>
     <p class="lead">Il torneo notturno di calcio a 6 più longevo della provincia di Brescia. Sedici squadre, due partite a sera sotto i fari della "piccola Bombonera", e prima degli adulti i tornei giovanili.</p>
     <div class="hero-facts">
       <div><b>47</b><span>Edizioni giocate</span></div>
       <div><b>16</b><span>Squadre</span></div>
       <div><b>19.000 €</b><span>Montepremi totale 2026</span></div>
     </div>
-    <div class="next-ed" role="status"><span class="dot" aria-hidden="true"></span><span>La 48ª edizione è in preparazione</span></div>
+    <div class="hero-cta"><a class="btn pri" href="#iscrizioni">Iscrivi la tua squadra</a><a class="btn light" href="#torneo">Guarda il tabellone</a><a class="btn outline" href="#albo">Albo d'oro</a></div>
     <div class="social hero-social"><a href="https://www.facebook.com/Grannotturnomaclodio/" target="_blank" rel="noopener" aria-label="Gran Notturno Maclodio su Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21z"/></svg><span>Facebook</span></a><a href="https://www.instagram.com/grannotturnomaclodio/" target="_blank" rel="noopener" aria-label="Gran Notturno Maclodio su Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21 8c-.1-1.5-.4-2.8-1.5-3.9S17.5 2.7 16 2.6C14.5 2.5 9.5 2.5 8 2.6c-1.5.1-2.8.4-3.9 1.5S2.7 6.5 2.6 8c-.1 1.5-.1 6.5 0 8 .1 1.5.4 2.8 1.5 3.9s2.4 1.4 3.9 1.5c1.5.1 6.5.1 8 0 1.5-.1 2.8-.4 3.9-1.5s1.4-2.4 1.5-3.9c.1-1.5.1-6.5 0-8zm-2 9.7a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.3.4s-4.1.1-5.3-.4A3 3 0 0 1 5 17.7c-.5-1.2-.4-4-.4-5.3s-.1-4.1.4-5.3A3 3 0 0 1 6.7 5.4c1.2-.5 4-.4 5.3-.4s4.1-.1 5.3.4A3 3 0 0 1 19 7.1c.5 1.2.4 4 .4 5.3s.1 4.1-.4 5.3z"/></svg><span>Instagram</span></a></div>
   </div>
   <div class="crest"><img src="logo.png" alt="Stemma del Gran Notturno Maclodio: scudo a strisce blu e bianche con pallone alato e la data 1978" width="700" height="522"></div>

@@ -189,6 +189,9 @@ nav.top ul a:hover{color:var(--on-night);background:var(--night-2)}
 .social svg{width:18px;height:18px}
 .hero-social a{border-color:var(--line);color:var(--ink);background:var(--paper)}
 .hero-social a:hover{background:var(--ice)}
+.next-ed{display:flex;align-items:center;gap:14px;width:fit-content;max-width:100%;background:var(--magenta);color:#fff;border-radius:14px;padding:14px 22px;font-family:var(--f-display);font-weight:400;font-size:clamp(24px,3.6vw,34px);line-height:1.05;text-transform:uppercase;letter-spacing:.01em;box-shadow:0 14px 30px -16px rgba(216,16,111,.7)}
+.next-ed .dot{flex:none;width:14px;height:14px;border-radius:50%;background:#fff;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
 /* regolamento */
 .rules{display:grid;gap:8px}
 details.rule{background:var(--paper);border:1px solid var(--line);border-radius:10px}
@@ -252,7 +255,7 @@ footer b{color:var(--on-night)}
       <div><b>16</b><span>Squadre</span></div>
       <div><b>19.000 €</b><span>Montepremi totale 2026</span></div>
     </div>
-    <div class="notice">La 48ª edizione è in preparazione.</div>
+    <div class="next-ed" role="status"><span class="dot" aria-hidden="true"></span><span>La 48ª edizione è in preparazione</span></div>
     <div class="social hero-social"><a href="https://www.facebook.com/Grannotturnomaclodio/" target="_blank" rel="noopener" aria-label="Gran Notturno Maclodio su Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21z"/></svg><span>Facebook</span></a><a href="https://www.instagram.com/grannotturnomaclodio/" target="_blank" rel="noopener" aria-label="Gran Notturno Maclodio su Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21 8c-.1-1.5-.4-2.8-1.5-3.9S17.5 2.7 16 2.6C14.5 2.5 9.5 2.5 8 2.6c-1.5.1-2.8.4-3.9 1.5S2.7 6.5 2.6 8c-.1 1.5-.1 6.5 0 8 .1 1.5.4 2.8 1.5 3.9s2.4 1.4 3.9 1.5c1.5.1 6.5.1 8 0 1.5-.1 2.8-.4 3.9-1.5s1.4-2.4 1.5-3.9c.1-1.5.1-6.5 0-8zm-2 9.7a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.3.4s-4.1.1-5.3-.4A3 3 0 0 1 5 17.7c-.5-1.2-.4-4-.4-5.3s-.1-4.1.4-5.3A3 3 0 0 1 6.7 5.4c1.2-.5 4-.4 5.3-.4s4.1-.1 5.3.4A3 3 0 0 1 19 7.1c.5 1.2.4 4 .4 5.3s.1 4.1-.4 5.3z"/></svg><span>Instagram</span></a></div>
   </div>
   <div class="crest"><img src="logo.png" alt="Stemma del Gran Notturno Maclodio: scudo a strisce blu e bianche con pallone alato e la data 1978" width="700" height="522"></div>

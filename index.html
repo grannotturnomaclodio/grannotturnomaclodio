@@ -329,6 +329,12 @@ footer{background:#060f27}
 .tb-y.fin .cup{display:flex;align-items:center;gap:6px;color:#b00d5b}
 .tb-y.fin .cup svg{width:18px;height:18px}
 @media (max-width:720px){.tb{padding:18px 18px 24px;gap:24px 40px}.tb-hd b{font-size:24px}.tb-hd img{width:52px}}
+.support{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px 28px;padding:26px 28px;border-radius:16px;color:#fff;background:linear-gradient(120deg,#d8106f 0%,#a30d58 55%,#0f2350 100%);box-shadow:0 20px 40px -20px rgba(216,16,111,.7)}
+.support h3{color:#fff;font-size:clamp(26px,3.6vw,36px);line-height:1}
+.support p{color:#ffe1ef;font-size:17px}
+.support p b{color:#fff}
+.support-btns{display:flex;flex-wrap:wrap;gap:10px}
+.support-btns .btn{font-size:16px;padding:13px 20px}
 /* regolamento */
 .rules{display:grid;gap:8px}
 details.rule{background:var(--paper);border:1px solid var(--line);border-radius:10px}
@@ -541,7 +547,10 @@ footer b{color:var(--on-night)}
     <div><small>4° Trofeo</small><b>Il Pane di Anna</b></div>
   </div></div>
   <ul class="spwall" id="spwall"></ul>
-  <p class="muted" style="margin:0">Vuoi sostenere la prossima edizione? Scrivi su WhatsApp al 335 213 789.</p>
+  <div class="support">
+    <div style="display:grid;gap:6px;min-width:0"><h3>Vuoi sostenere la prossima edizione?</h3><p style="margin:0">Scrivi su WhatsApp al <b>335 213 789</b> oppure scrivi a <b>info@sportmc.it</b></p></div>
+    <div class="support-btns"><a class="btn wa" href="https://wa.me/39335213789?text=Ciao%2C%20vorrei%20sostenere%20il%20Gran%20Notturno%20Maclodio" target="_blank" rel="noopener">WhatsApp 335 213 789</a><a class="btn light" href="https://mail.google.com/mail/?view=cm&amp;to=info@sportmc.it&amp;su=Sponsor%20Gran%20Notturno%20Maclodio" target="_blank" rel="noopener">Scrivi a info@sportmc.it</a></div>
+  </div>
 </div></section>
 
 <section class="sec" id="app" style="padding-block:40px;border-top:1px solid var(--line)"><div class="in">

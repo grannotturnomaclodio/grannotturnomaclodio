@@ -240,6 +240,23 @@ nav.top .in{position:relative}
 .bcard .res{border-top:1px solid rgba(255,255,255,.1);padding-top:8px;font-size:14px;color:var(--on-night)}
 .bcard .res b{color:#9fe3b8}
 .bcard.gold{outline:2px solid var(--magenta)}
+@media (max-width:720px){
+  .brk-scroll{overflow-x:visible}
+  .bcols{display:grid;min-width:0;gap:22px}
+  .bcol{width:auto}
+  .bcol h4{font-size:15px;color:var(--on-night);border-bottom:2px solid var(--magenta);padding-bottom:6px;margin-bottom:8px}
+  .bbody{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:10px}
+  .bgrp{display:contents}
+  .bslot{padding:0}
+  .bgrp.pair::after,.bgrp.single::after,.bcol:not(:first-child) .bm::before{display:none}
+  .bm{padding:12px 14px;gap:5px}
+  .bm .top{font-size:13px}
+  .bm .s{font-size:16px;padding:6px 0}
+  .bm .s b{font-size:18px}
+  .bm .bo{font-size:13px}
+  .brk-tabs{width:100%}
+  .brk-tabs button{flex:1 1 auto;font-size:15px;padding:11px 12px}
+}
 /* regolamento */
 .rules{display:grid;gap:8px}
 details.rule{background:var(--paper);border:1px solid var(--line);border-radius:10px}
@@ -395,7 +412,7 @@ footer b{color:var(--on-night)}
     <div class="brk-scroll" role="tabpanel" id="bp-v" aria-labelledby="bt-v"></div>
     <div class="brk-scroll" role="tabpanel" id="bp-p" aria-labelledby="bt-p" hidden></div>
     <div role="tabpanel" id="bp-f" aria-labelledby="bt-f" hidden></div>
-    <p class="brk-hint">Risultati e date dell'edizione 2026. Sul telefono scorri il tabellone di lato.</p>
+    <p class="brk-hint">Risultati e date dell'edizione 2026.</p>
   </div>
 </div></section>
 
@@ -548,7 +565,7 @@ const P=[
  {t:"4° turno",k:"single",m:[M("Perd.","Gio 25/6","21:10",ML,5,LA,3,"Immobiliare ML semifinalista P1","in win"),M("Perd.","Gio 25/6","22:00",IM,2,CA,4,"Caffè Ambrosia semifinalista P2","in win")]}
 ];
 const row=(t,s,o)=>`<div class="s${o==="w"?" w":o==="l"?" l":""}"><span>${t}</span><b>${s}</b></div>`;
-const card=m=>{const wa=m.sa>m.sb;return `<div class="bm"><div class="top"><b>${m.n}</b><span>${m.d} · ${m.h}</span></div>${row(m.a,m.sa,wa?"w":"l")}${row(m.b,m.sb,wa?"l":"w")}<div class="bo${/win/.test(m.cls||"")?" win":""}">${m.out}</div></div>`};
+const card=m=>{const wa=m.sa>m.sb;return `<div class="bm"><div class="top"><b>${m.n}</b><span>${m.d} · ${m.h}</span></div>${row(m.a,m.sa,wa?"w":"l")}${row(m.b,m.sb,wa?"l":"w")}<div class="bo${/win/.test(m.cls||"")?" win":""}">${m.out.replace(/^Perdente al n° (\d+)$/,(x,n)=>`${wa?m.b:m.a} rientra al n° ${n} dei perdenti`)}</div></div>`};
 const draw=(rounds)=>`<div class="bcols">${rounds.map((r,i)=>{const last=i===rounds.length-1;const grp=[];
   if(r.k==="pair"&&!last){for(let j=0;j<r.m.length;j+=2)grp.push(`<div class="bgrp pair"><div class="bslot">${card(r.m[j])}</div><div class="bslot">${card(r.m[j+1])}</div></div>`)}
   else r.m.forEach(m=>grp.push(`<div class="bgrp single"><div class="bslot">${card(m)}</div></div>`));

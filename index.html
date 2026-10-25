@@ -233,13 +233,13 @@ footer b{color:var(--on-night)}
 <nav class="top" aria-label="Sezioni"><div class="in">
   <a class="brand" href="#top">Gran Notturno Maclodio</a>
   <ul>
+    <li><a href="#iscrizioni">Iscrizioni</a></li>
     <li><a href="#torneo">Il torneo</a></li>
     <li><a href="#video">Video</a></li>
     <li><a href="#montepremi">Montepremi</a></li>
     <li><a href="#storia">Storia</a></li>
     <li><a href="#albo">Albo d'oro</a></li>
     <li><a href="#giovanili">Giovanili</a></li>
-    <li><a href="#iscrizioni">Iscrizioni</a></li>
     <li><a href="#diretta">Diretta</a></li>
     <li><a href="#sponsor">Sponsor</a></li>
   </ul>
@@ -260,6 +260,42 @@ footer b{color:var(--on-night)}
   </div>
   <div class="crest"><img src="logo.png" alt="Stemma del Gran Notturno Maclodio: scudo a strisce blu e bianche con pallone alato e la data 1978" width="700" height="522"></div>
 </div></header>
+
+<section class="sec" id="iscrizioni" style="border-top:1px solid var(--line)"><div class="in">
+  <div><div class="eyebrow">Iscrizioni</div><h2>Porta la tua squadra a Maclodio</h2></div>
+  <div class="split">
+    <div style="display:grid;gap:18px">
+      <p class="lead" style="margin:0">Le iscrizioni si raccolgono su WhatsApp o via email. Le squadre dell'edizione precedente hanno diritto di prelazione.</p>
+      <div><div class="eyebrow" style="color:var(--ink-2)">WhatsApp iscrizioni e informazioni</div><div class="phone">335 213 789</div><div class="phone">339 303 2760</div></div>
+      <div><div class="eyebrow" style="color:var(--ink-2)">Email iscrizioni</div><div class="phone" style="font-size:clamp(26px,4.5vw,38px)">info@sportmc.it</div></div>
+      <ol class="steps">
+        <li>Compila la richiesta qui accanto.</li>
+        <li>Invia il messaggio già pronto su WhatsApp o per email a info@sportmc.it.</li>
+        <li>L'organizzazione ti ricontatta per confermare il posto.</li>
+      </ol>
+      <div style="display:flex;flex-wrap:wrap;gap:10px"><button class="btn sec" type="button" id="copy-num">Copia 335 213 789</button><button class="btn sec" type="button" id="copy-num2">Copia 339 303 2760</button><button class="btn sec" type="button" id="copy-mail">Copia l'email</button></div>
+    </div>
+    <form class="join" id="join" novalidate>
+      <label for="j-nome">Nome della squadra<input id="j-nome" required placeholder="Fino a 4 sponsor + paese o città"></label>
+      <label for="j-paese">Paese o città<input id="j-paese" required></label>
+      <div class="row2">
+        <label for="j-ref">Referente<input id="j-ref" required autocomplete="name"></label>
+        <label for="j-tel">Telefono del referente<input id="j-tel" type="tel" required autocomplete="tel"></label>
+      </div>
+      <label for="j-note">Note<textarea id="j-note" placeholder="es. abbiamo giocato nell'edizione 2026"></textarea></label>
+      <p class="muted" id="j-err" hidden style="margin:0;color:var(--magenta);font-weight:700"></p>
+      <div><button class="btn pri" type="submit">Prepara la richiesta</button></div>
+      <div class="out" id="j-out" hidden>
+        <pre id="j-text"></pre>
+        <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn wa" id="j-wa" href="https://wa.me/39335213789" target="_blank" rel="noopener">Invia al 335 213 789</a><a class="btn wa" id="j-wa2" href="https://wa.me/393393032760" target="_blank" rel="noopener">Invia al 339 303 2760</a><button class="btn sec" type="button" id="j-copy">Copia il testo</button></div>
+        <div class="mailbox"><b>Oppure per email a info@sportmc.it</b>
+          <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn pri" id="j-gmail" href="https://mail.google.com/mail/?view=cm&amp;to=info@sportmc.it" target="_blank" rel="noopener">Scrivi con Gmail</a><a class="btn pri" id="j-outlook" href="https://outlook.live.com/mail/0/deeplink/compose?to=info@sportmc.it" target="_blank" rel="noopener">Scrivi con Outlook</a><a class="btn sec" id="j-mailto" href="mailto:info@sportmc.it">Altro programma di posta</a><button class="btn sec" type="button" id="j-mailcopy">Copia email e testo</button></div>
+          <span class="muted" style="font-size:14px">Se nessun pulsante funziona, copia email e testo e incollali in un nuovo messaggio.</span></div>
+        <p class="muted" style="margin:0;font-size:14px">Se WhatsApp o l'email non si aprono, copia il testo e mandalo al 335 213 789, al 339 303 2760 o a info@sportmc.it.</p>
+      </div>
+    </form>
+  </div>
+</div></section>
 
 <section class="sec night" id="torneo"><div class="in">
   <div><div class="eyebrow">La formula</div><h2>Due sconfitte<br>e sei fuori</h2></div>
@@ -338,42 +374,6 @@ footer b{color:var(--on-night)}
 </div></section>
 
 
-
-<section class="sec" id="iscrizioni"><div class="in">
-  <div><div class="eyebrow">Iscrizioni</div><h2>Porta la tua squadra a Maclodio</h2></div>
-  <div class="split">
-    <div style="display:grid;gap:18px">
-      <p class="lead" style="margin:0">Le iscrizioni si raccolgono su WhatsApp o via email. Le squadre dell'edizione precedente hanno diritto di prelazione.</p>
-      <div><div class="eyebrow" style="color:var(--ink-2)">WhatsApp iscrizioni e informazioni</div><div class="phone">335 213 789</div><div class="phone">339 303 2760</div></div>
-      <div><div class="eyebrow" style="color:var(--ink-2)">Email iscrizioni</div><div class="phone" style="font-size:clamp(26px,4.5vw,38px)">info@sportmc.it</div></div>
-      <ol class="steps">
-        <li>Compila la richiesta qui accanto.</li>
-        <li>Invia il messaggio già pronto su WhatsApp o per email a info@sportmc.it.</li>
-        <li>L'organizzazione ti ricontatta per confermare il posto.</li>
-      </ol>
-      <div style="display:flex;flex-wrap:wrap;gap:10px"><button class="btn sec" type="button" id="copy-num">Copia 335 213 789</button><button class="btn sec" type="button" id="copy-num2">Copia 339 303 2760</button><button class="btn sec" type="button" id="copy-mail">Copia l'email</button></div>
-    </div>
-    <form class="join" id="join" novalidate>
-      <label for="j-nome">Nome della squadra<input id="j-nome" required placeholder="Fino a 4 sponsor + paese o città"></label>
-      <label for="j-paese">Paese o città<input id="j-paese" required></label>
-      <div class="row2">
-        <label for="j-ref">Referente<input id="j-ref" required autocomplete="name"></label>
-        <label for="j-tel">Telefono del referente<input id="j-tel" type="tel" required autocomplete="tel"></label>
-      </div>
-      <label for="j-note">Note<textarea id="j-note" placeholder="es. abbiamo giocato nell'edizione 2026"></textarea></label>
-      <p class="muted" id="j-err" hidden style="margin:0;color:var(--magenta);font-weight:700"></p>
-      <div><button class="btn pri" type="submit">Prepara la richiesta</button></div>
-      <div class="out" id="j-out" hidden>
-        <pre id="j-text"></pre>
-        <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn wa" id="j-wa" href="https://wa.me/39335213789" target="_blank" rel="noopener">Invia al 335 213 789</a><a class="btn wa" id="j-wa2" href="https://wa.me/393393032760" target="_blank" rel="noopener">Invia al 339 303 2760</a><button class="btn sec" type="button" id="j-copy">Copia il testo</button></div>
-        <div class="mailbox"><b>Oppure per email a info@sportmc.it</b>
-          <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn pri" id="j-gmail" href="https://mail.google.com/mail/?view=cm&amp;to=info@sportmc.it" target="_blank" rel="noopener">Scrivi con Gmail</a><a class="btn pri" id="j-outlook" href="https://outlook.live.com/mail/0/deeplink/compose?to=info@sportmc.it" target="_blank" rel="noopener">Scrivi con Outlook</a><a class="btn sec" id="j-mailto" href="mailto:info@sportmc.it">Altro programma di posta</a><button class="btn sec" type="button" id="j-mailcopy">Copia email e testo</button></div>
-          <span class="muted" style="font-size:14px">Se nessun pulsante funziona, copia email e testo e incollali in un nuovo messaggio.</span></div>
-        <p class="muted" style="margin:0;font-size:14px">Se WhatsApp o l'email non si aprono, copia il testo e mandalo al 335 213 789, al 339 303 2760 o a info@sportmc.it.</p>
-      </div>
-    </form>
-  </div>
-</div></section>
 
 <section class="sec night" id="diretta"><div class="in">
   <div><div class="eyebrow">Diretta e dove siamo</div><h2>Allo stadio o in streaming</h2></div>

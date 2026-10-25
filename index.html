@@ -222,7 +222,12 @@ nav.top .in{position:relative}
 .bm{position:relative;width:100%;background:var(--night-2);border-radius:10px;padding:8px 10px;display:grid;gap:3px}
 .bm .top{display:flex;justify-content:space-between;gap:6px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--on-night-2)}
 .bm .top b{color:#fff;background:var(--royal);border-radius:4px;padding:0 5px;font-weight:800}
-.bm .s{font-size:13px;font-weight:600;color:var(--on-night);padding:3px 0;border-top:1px solid rgba(255,255,255,.08);overflow-wrap:anywhere}
+.bm .s{display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:600;color:var(--on-night);padding:3px 0;border-top:1px solid rgba(255,255,255,.08)}
+.bm .s span{min-width:0;overflow-wrap:anywhere}
+.bm .s b{font-variant-numeric:tabular-nums;font-size:15px}
+.bm .s.w{color:#fff;font-weight:800}.bm .s.w b{color:#9fe3b8}
+.bm .s.l{color:var(--on-night-2);font-weight:500}
+.bcard .sc{color:#fff}
 .bm .s.bin{color:#ff9ccc}
 .bm .bo{font-size:11px;font-weight:800;letter-spacing:.03em;color:#ff7dbb}
 .bm .bo.win{color:#9fe3b8}
@@ -384,13 +389,13 @@ footer b{color:var(--on-night)}
         <button type="button" role="tab" id="bt-p" aria-selected="false" aria-controls="bp-p">Perdente</button>
         <button type="button" role="tab" id="bt-f" aria-selected="false" aria-controls="bp-f">Semifinali e finali</button>
       </div>
-      <a class="brk-orig" href="tabellone-2026.jpg" target="_blank" rel="noopener">Tabellone originale 2026</a>
+      <a class="brk-orig" href="tabellone-2026.jpg" target="_blank" rel="noopener">Schema ufficiale 2026</a>
     </div>
     <p class="brk-note" id="brk-note"></p>
     <div class="brk-scroll" role="tabpanel" id="bp-v" aria-labelledby="bt-v"></div>
     <div class="brk-scroll" role="tabpanel" id="bp-p" aria-labelledby="bt-p" hidden></div>
     <div role="tabpanel" id="bp-f" aria-labelledby="bt-f" hidden></div>
-    <p class="brk-hint">Date e orari dell'edizione 2026. Sul telefono scorri il tabellone di lato.</p>
+    <p class="brk-hint">Risultati e date dell'edizione 2026. Sul telefono scorri il tabellone di lato.</p>
   </div>
 </div></section>
 
@@ -529,19 +534,21 @@ document.addEventListener("keydown",e=>{if(lb.hidden)return;if(e.key==="Escape")
 
 /* Tabellone */
 (function(){
-const M=(n,d,h,a,b,out,cls)=>({n,d,h,a,b,out,cls});
+const M=(n,d,h,a,sa,b,sb,out,cls)=>({n,d,h,a,sa,b,sb,out,cls});
+const ML="Immobiliare ML",LA="Lancellotti",TP="Bar Tre Ponti",BO="Bovisasca",AL="Alice Costruzioni",VB="VI.BI. Elettrorecuperi",IC="L'Immobiliare",BZ="BZ Zanchi",TC="Tecnocasa",BM="Bar Milano 2",AS="Alta Serbatoi",QP="Q People Café",AB="Autodem. Buffoli",IM="Imbalplast",AC="AC Costruzioni",CA="Caffè Ambrosia";
 const V=[
- {t:"1° turno",k:"pair",m:[M("N° 1","Lun 8/6","21:10","Posizione 1","Posizione 2","Perdente al n° 1"),M("N° 2","Lun 8/6","22:00","Posizione 3","Posizione 4","Perdente al n° 2"),M("N° 3","Mer 10/6","21:10","Posizione 5","Posizione 6","Perdente al n° 3"),M("N° 4","Mer 10/6","22:00","Posizione 7","Posizione 8","Perdente al n° 4"),M("N° 5","Gio 11/6","21:10","Posizione 9","Posizione 10","Perdente al n° 5"),M("N° 6","Gio 11/6","22:00","Posizione 11","Posizione 12","Perdente al n° 6"),M("N° 7","Ven 12/6","21:10","Posizione 13","Posizione 14","Perdente al n° 7"),M("N° 8","Ven 12/6","22:00","Posizione 15","Posizione 16","Perdente al n° 8")]},
- {t:"2° turno",k:"pair",m:[M("N° 9","Dom 14/6","22:00","Vincente n° 1","Vincente n° 2","Perdente al n° 9"),M("N° 10","Lun 15/6","22:00","Vincente n° 3","Vincente n° 4","Perdente al n° 10"),M("N° 11","Mer 17/6","22:00","Vincente n° 5","Vincente n° 6","Perdente al n° 11"),M("N° 12","Gio 18/6","22:00","Vincente n° 7","Vincente n° 8","Perdente al n° 12")]},
- {t:"3° turno",k:"single",m:[M("N° 13","Lun 22/6","22:00","Vincente n° 9","Vincente n° 10","Vince: semifinalista V1 · perde al n° 13","win"),M("N° 14","Mer 24/6","22:00","Vincente n° 11","Vincente n° 12","Vince: semifinalista V2 · perde al n° 14","win")]}
+ {t:"1° turno",k:"pair",m:[M("N° 1","Lun 8/6","21:10",ML,5,LA,6,"Perdente al n° 1"),M("N° 2","Lun 8/6","22:00",TP,5,BO,3,"Perdente al n° 2"),M("N° 3","Mer 10/6","21:10",AL,1,VB,4,"Perdente al n° 3"),M("N° 4","Mer 10/6","22:00",IC,2,BZ,6,"Perdente al n° 4"),M("N° 5","Gio 11/6","21:10",TC,7,BM,4,"Perdente al n° 5"),M("N° 6","Gio 11/6","22:00",AS,3,QP,1,"Perdente al n° 6"),M("N° 7","Ven 12/6","21:10",AB,9,IM,8,"Perdente al n° 7"),M("N° 8","Ven 12/6","22:00",AC,3,CA,8,"Perdente al n° 8")]},
+ {t:"2° turno",k:"pair",m:[M("N° 9","Dom 14/6","22:00",LA,8,TP,3,"Perdente al n° 9"),M("N° 10","Lun 15/6","22:00",VB,3,BZ,5,"Perdente al n° 10"),M("N° 11","Mer 17/6","22:00",TC,4,AS,2,"Perdente al n° 11"),M("N° 12","Gio 18/6","22:00",AB,2,CA,3,"Perdente al n° 12")]},
+ {t:"3° turno",k:"single",m:[M("N° 13","Lun 22/6","22:00",LA,3,BZ,6,"BZ Zanchi semifinalista V1","win"),M("N° 14","Mer 24/6","22:00",TC,3,CA,2,"Tecnocasa semifinalista V2","win")]}
 ];
 const P=[
- {t:"1° turno",k:"single",m:[M("Perd.","Dom 14/6","21:10","Perdente n° 1","Perdente n° 2","Chi perde è eliminato"),M("Perd.","Lun 15/6","21:10","Perdente n° 3","Perdente n° 4","Chi perde è eliminato"),M("Perd.","Mer 17/6","21:10","Perdente n° 5","Perdente n° 6","Chi perde è eliminato"),M("Perd.","Gio 18/6","21:10","Perdente n° 7","Perdente n° 8","Chi perde è eliminato")]},
- {t:"2° turno",k:"pair",m:[M("Perd.","Ven 19/6","22:00","Vincente 1-2","Perdente n° 11","Chi perde è eliminato","in"),M("Perd.","Ven 19/6","21:10","Vincente 3-4","Perdente n° 12","Chi perde è eliminato","in"),M("Perd.","Dom 21/6","22:00","Vincente 5-6","Perdente n° 9","Chi perde è eliminato","in"),M("Perd.","Dom 21/6","21:10","Vincente 7-8","Perdente n° 10","Chi perde è eliminato","in")]},
- {t:"3° turno",k:"single",m:[M("Perd.","Lun 22/6","21:10","Vincente","Vincente","Chi perde è eliminato"),M("Perd.","Mer 24/6","21:10","Vincente","Vincente","Chi perde è eliminato")]},
- {t:"4° turno",k:"single",m:[M("Perd.","Gio 25/6","21:10","Vincente","Perdente n° 13","Vince: semifinalista P1","in win"),M("Perd.","Gio 25/6","22:00","Vincente","Perdente n° 14","Vince: semifinalista P2","in win")]}
+ {t:"1° turno",k:"single",m:[M("Perd.","Dom 14/6","21:10",ML,7,BO,2,"Bovisasca eliminata"),M("Perd.","Lun 15/6","21:10",AL,3,IC,2,"L'Immobiliare eliminata"),M("Perd.","Mer 17/6","21:10",BM,4,QP,2,"Q People Café eliminata"),M("Perd.","Gio 18/6","21:10",IM,8,AC,2,"AC Costruzioni eliminata")]},
+ {t:"2° turno",k:"pair",m:[M("Perd.","Ven 19/6","22:00",ML,5,AS,2,"Alta Serbatoi eliminata","in"),M("Perd.","Ven 19/6","21:10",AL,7,AB,2,"Autodem. Buffoli eliminata","in"),M("Perd.","Dom 21/6","22:00",BM,4,TP,6,"Bar Milano 2 eliminata","in"),M("Perd.","Dom 21/6","21:10",IM,8,VB,6,"VI.BI. eliminata","in")]},
+ {t:"3° turno",k:"single",m:[M("Perd.","Lun 22/6","21:10",ML,7,AL,4,"Alice Costruzioni eliminata"),M("Perd.","Mer 24/6","21:10",IM,4,TP,2,"Bar Tre Ponti eliminata")]},
+ {t:"4° turno",k:"single",m:[M("Perd.","Gio 25/6","21:10",ML,5,LA,3,"Immobiliare ML semifinalista P1","in win"),M("Perd.","Gio 25/6","22:00",IM,2,CA,4,"Caffè Ambrosia semifinalista P2","in win")]}
 ];
-const card=m=>`<div class="bm"><div class="top"><b>${m.n}</b><span>${m.d} · ${m.h}</span></div><div class="s">${m.a}</div><div class="s${/in/.test(m.cls||"")?" bin":""}">${m.b}</div><div class="bo${/win/.test(m.cls||"")?" win":""}">${m.out}</div></div>`;
+const row=(t,s,o)=>`<div class="s${o==="w"?" w":o==="l"?" l":""}"><span>${t}</span><b>${s}</b></div>`;
+const card=m=>{const wa=m.sa>m.sb;return `<div class="bm"><div class="top"><b>${m.n}</b><span>${m.d} · ${m.h}</span></div>${row(m.a,m.sa,wa?"w":"l")}${row(m.b,m.sb,wa?"l":"w")}<div class="bo${/win/.test(m.cls||"")?" win":""}">${m.out}</div></div>`};
 const draw=(rounds)=>`<div class="bcols">${rounds.map((r,i)=>{const last=i===rounds.length-1;const grp=[];
   if(r.k==="pair"&&!last){for(let j=0;j<r.m.length;j+=2)grp.push(`<div class="bgrp pair"><div class="bslot">${card(r.m[j])}</div><div class="bslot">${card(r.m[j+1])}</div></div>`)}
   else r.m.forEach(m=>grp.push(`<div class="bgrp single"><div class="bslot">${card(m)}</div></div>`));
@@ -549,10 +556,10 @@ const draw=(rounds)=>`<div class="bcols">${rounds.map((r,i)=>{const last=i===rou
 document.getElementById("bp-v").innerHTML=draw(V);
 document.getElementById("bp-p").innerHTML=draw(P);
 document.getElementById("bp-f").innerHTML=`<div class="bfin">
- <div class="bcard"><h4>Prima semifinale</h4><div class="vs"><span>Semifinalista V1</span><span>contro</span><span>Semifinalista P2</span></div><ul><li>Andata: ven 26/6 · 21:10</li><li>Ritorno: lun 29/6 · 22:00</li></ul></div>
- <div class="bcard"><h4>Seconda semifinale</h4><div class="vs"><span>Semifinalista V2</span><span>contro</span><span>Semifinalista P1</span></div><ul><li>Andata: ven 26/6 · 22:00</li><li>Ritorno: lun 29/6 · 21:10</li></ul></div>
- <div class="bcard"><h4>Finale 3°/4° posto</h4><div class="vs"><span>Perdenti delle semifinali</span></div><ul><li>Mer 1/7 · 21:10</li></ul><div class="res">2026: <b>Immobiliare ML Castrezzato</b> 5-3 Caffè Ambrosia Lograto</div></div>
- <div class="bcard gold"><h4>Finalissima 1°/2°</h4><div class="vs"><span>Vincenti delle semifinali</span></div><ul><li>Mer 1/7 · 22:00</li></ul><div class="res">2026: <b>Tecnocasa Prevalle</b> 6-5 BZ Zanchi Ospitaletto</div></div>
+ <div class="bcard"><h4>Prima semifinale</h4><div class="vs"><span>BZ Zanchi (V1)</span><span>contro</span><span>Caffè Ambrosia (P2)</span></div><ul><li>Andata, ven 26/6: <b class="sc">7-4</b></li><li>Ritorno, lun 29/6: <b class="sc">2-1</b></li></ul><div class="res">In finale: <b>BZ Zanchi</b></div></div>
+ <div class="bcard"><h4>Seconda semifinale</h4><div class="vs"><span>Tecnocasa (V2)</span><span>contro</span><span>Immobiliare ML (P1)</span></div><ul><li>Andata, ven 26/6: <b class="sc">3-1</b></li><li>Ritorno, lun 29/6: <b class="sc">3-2</b></li></ul><div class="res">In finale: <b>Tecnocasa</b></div></div>
+ <div class="bcard"><h4>Finale 3°/4° posto</h4><div class="vs"><span>Immobiliare ML</span><span>5-3</span><span>Caffè Ambrosia</span></div><ul><li>Mer 1/7 · 21:10</li></ul><div class="res">3° posto: <b>Immobiliare ML Castrezzato</b></div></div>
+ <div class="bcard gold"><h4>Finalissima 1°/2°</h4><div class="vs"><span>Tecnocasa</span><span>6-5</span><span>BZ Zanchi</span></div><ul><li>Mer 1/7 · 22:00</li></ul><div class="res">Vincitrice 2026: <b>Tecnocasa Prevalle</b>, terzo titolo con sei vittorie su sei</div></div>
 </div>`;
 const notes={v:"Partono tutte le 16 squadre. Chi perde rientra nel tabellone perdente al numero indicato.",p:"Chi perde nel tabellone perdente è eliminato. I due vincitori del 4° turno sono i semifinalisti P1 e P2.",f:"Semifinali in andata e ritorno: contano le vittorie, non la differenza reti. In parità si gioca l'extra time."};
 const show=k=>{["v","p","f"].forEach(x=>{document.getElementById("bp-"+x).hidden=x!==k;document.getElementById("bt-"+x).setAttribute("aria-selected",x===k)});document.getElementById("brk-note").textContent=notes[k]};

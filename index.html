@@ -289,6 +289,46 @@ h2{font-size:clamp(38px,5.6vw,66px)}
 .gallery img{box-shadow:0 8px 18px -12px rgba(11,26,62,.55)}
 .card{border:1px solid rgba(255,255,255,.08)}
 footer{background:#060f27}
+
+/* ===== Tabellone: grafica rifinita ===== */
+.tbw-scroll{background:linear-gradient(180deg,#f6f9ff 0%,#e4ecfa 100%);border:1px solid rgba(255,255,255,.18);box-shadow:0 24px 50px -28px rgba(0,0,0,.7)}
+.tb{grid-template-areas:"hd hd" "w sf" "l sf";gap:30px 52px;padding:26px 30px 32px}
+.tb-hd{grid-area:hd;display:flex;align-items:center;gap:14px;padding-bottom:16px;border-bottom:2px solid rgba(15,35,80,.12)}
+.tb-hd img{width:64px;height:auto}
+.tb-hd b{display:block;font-family:var(--f-display);font-weight:400;font-size:30px;line-height:1;text-transform:uppercase;color:#0f2350}
+.tb-hd span{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#d8106f}
+.tb-t{display:inline-block;width:fit-content;color:#fff!important;font-size:22px;padding:7px 14px 6px;border-radius:8px;letter-spacing:.02em;box-shadow:0 6px 14px -8px rgba(15,35,80,.6)}
+.tb-blk.w .tb-t{background:linear-gradient(90deg,#24923a,#3cb558)}
+.tb-blk.l .tb-t{background:linear-gradient(90deg,#c62f3a,#e5525b)}
+.tb-col h4{width:fit-content;background:#0f2350;color:#fff;border-radius:999px;padding:4px 11px;font-size:10px;margin-bottom:8px}
+.tb-lab{font-size:9.5px;color:#5b6b8f;margin-left:4px}
+.tb-lab em{color:#c62f3a}
+.tb-box{background:#fff!important;border:0;border-radius:10px;box-shadow:0 8px 18px -10px rgba(15,35,80,.5),0 0 0 1px rgba(15,35,80,.07)}
+.tb-blk.w .tb-box{border-top:4px solid #2fa846}
+.tb-blk.l .tb-box{border-top:4px solid #d93a46}
+.tb-r{padding:6px 9px;font-size:13px}
+.tb-r+.tb-r{border-top:1px solid #e9eef7}
+.tb-r.w{background:linear-gradient(90deg,rgba(47,168,70,.13),rgba(47,168,70,0));color:#0f2350}
+.tb-r.l{color:#6b7898}
+.tb-r .sc{min-width:28px;text-align:center;font-size:16px;border-radius:6px;padding:3px 6px 2px}
+.tb-r.w .sc{background:#1f8a3a;color:#fff}
+.tb-r.l .sc{background:#eef2f9;color:#6b7898}
+.tb-r .e{font-size:13px;padding:1px 5px;background:#d93a46}
+.tb-d{background:#f3f6fc;color:#5b6b8f;font-size:10px;border-top:1px solid #e9eef7}
+.tb-d .num{color:#c62f3a}
+.tb-g.pair::after{border-color:#9aa8c4;border-radius:0 8px 8px 0}
+.tb-g.single::after,.tb-col:not(:first-child) .tb-box::before{border-color:#9aa8c4}
+.tb-sf{gap:16px;padding-left:6px;border-left:2px dashed rgba(15,35,80,.18);padding-left:30px;margin-left:-22px}
+.tb-y{background:linear-gradient(180deg,#fffaf0,#fff2c4);border:0;border-top:4px solid #e0a800;box-shadow:0 10px 22px -12px rgba(15,35,80,.55),0 0 0 1px rgba(15,35,80,.07);border-radius:12px;padding:14px 16px}
+.tb-y h5{font-size:21px;color:#0f2350}
+.tb-y .vs{grid-template-columns:1fr auto;row-gap:6px;font-size:14px}
+.tb-y .vs small{justify-self:end;min-width:30px;text-align:center;background:#eef2f9;color:#4b5a7c;border-radius:6px;padding:3px 6px;font-size:12px;font-weight:800}
+.tb-y .vs .w{color:#0f2350}
+.tb-y .legs{font-size:12px;color:#5b6b8f;border-top:1px solid rgba(15,35,80,.12)}
+.tb-y.fin{background:linear-gradient(160deg,#fff3b8 0%,#ffd75a 100%);border-top-color:#d8106f;outline:0;box-shadow:0 18px 36px -14px rgba(216,16,111,.55),0 0 0 2px #d8106f}
+.tb-y.fin .cup{display:flex;align-items:center;gap:6px;color:#b00d5b}
+.tb-y.fin .cup svg{width:18px;height:18px}
+@media (max-width:720px){.tb{padding:18px 18px 24px;gap:24px 40px}.tb-hd b{font-size:24px}.tb-hd img{width:52px}}
 /* regolamento */
 .rules{display:grid;gap:8px}
 details.rule{background:var(--paper);border:1px solid var(--line);border-radius:10px}
@@ -597,10 +637,11 @@ const cols=(R,win)=>`<div class="tb-cols">${R.map((c,i)=>{const last=i===R.lengt
   return `<div class="tb-col${last?" last":""}"><h4>${c.t}</h4><div class="tb-body">${g.join("")}</div></div>`}).join("")}</div>`;
 const sf=(t,a,ra,b,rb,legs,win)=>`<div class="tb-y"><h5>${t}</h5><div class="vs"><span class="${win===a?"w":""}">${a}</span><small>${ra}</small><span class="${win===b?"w":""}">${b}</span><small>${rb}</small></div><div class="legs">${legs}</div></div>`;
 document.getElementById("tb").innerHTML=
+ `<div class="tb-hd"><img src="logo.png" alt="" width="64" height="48"><div><b>47° Gran Notturno Maclodio</b><span>Tabellone e risultati 2026</span></div></div>`+
  `<div class="tb-blk w"><h3 class="tb-t">Tabellone vincente</h3>${cols(W,true)}</div>`+
  `<div class="tb-sf">${sf("Prima semifinale",BZ,"V1",CA,"P2","Andata ven 26/6: 7-4 · Ritorno lun 29/6: 2-1",BZ)}${sf("Seconda semifinale",TC,"V2",ML,"P1","Andata ven 26/6: 3-1 · Ritorno lun 29/6: 3-2",TC)}
   <div class="tb-y"><h5>Finale 3°/4° posto</h5><div class="vs"><span class="w">${ML}</span><small>5</small><span>${CA}</span><small>3</small></div><div class="legs">Mercoledì 1 luglio · ore 21:10</div></div>
-  <div class="tb-y fin"><span class="cup">Vincitrice 2026: Tecnocasa</span><h5>Finalissima 1°/2° posto</h5><div class="vs"><span class="w">${TC}</span><small>6</small><span>${BZ}</span><small>5</small></div><div class="legs">Mercoledì 1 luglio · ore 22:00</div></div></div>`+
+  <div class="tb-y fin"><span class="cup"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17 4V2H7v2H3v3a4 4 0 0 0 4 4h.3A5 5 0 0 0 11 13.9V17H8v2h8v-2h-3v-3.1a5 5 0 0 0 3.7-2.9H17a4 4 0 0 0 4-4V4zM5 7V6h2v3a2 2 0 0 1-2-2zm14 0a2 2 0 0 1-2 2V6h2z"/></svg>Vincitrice 2026: Tecnocasa</span><h5>Finalissima 1°/2° posto</h5><div class="vs"><span class="w">${TC}</span><small>6</small><span>${BZ}</span><small>5</small></div><div class="legs">Mercoledì 1 luglio · ore 22:00</div></div></div>`+
  `<div class="tb-blk l"><h3 class="tb-t">Tabellone perdente</h3>${cols(L,false)}</div>`;
 })();
 /* Iscrizione */

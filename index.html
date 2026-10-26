@@ -335,6 +335,19 @@ footer{background:#060f27}
 .support p b{color:#fff}
 .support-btns{display:flex;flex-wrap:wrap;gap:10px}
 .support-btns .btn{font-size:16px;padding:13px 20px}
+.legal{background:#060f27;padding-block:0 8px;border-top:1px solid #132a5c}
+.legal-box{border-radius:12px;background:#0b1a3e;color:#c9d5ee;margin-top:22px}
+.legal-box summary{cursor:pointer;list-style:none;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:14px 18px;font-weight:800;color:#fff}
+.legal-box summary::-webkit-details-marker{display:none}
+.legal-box summary::after{content:"+";margin-left:auto;color:#ff7dbb;font-size:22px;line-height:1}
+.legal-box[open] summary::after{content:"–"}
+.legal-box summary small{font-weight:500;color:#a9b8d8;font-size:14px}
+.legal-body{padding:0 18px 18px;font-size:14px;line-height:1.6}
+.legal-body p{margin:0 0 10px;max-width:80ch}
+.legal-body ul{margin:0 0 12px;padding-left:18px;display:grid;gap:6px;max-width:80ch}
+.legal-body b{color:#fff}
+.foot-copy{flex-basis:100%;font-size:12.5px;line-height:1.55;color:#8597bd;border-top:1px solid #132a5c;padding-top:14px}
+.foot-copy a{color:#c9d5ee}
 /* regolamento */
 .rules{display:grid;gap:8px}
 details.rule{background:var(--paper);border:1px solid var(--line);border-radius:10px}
@@ -566,9 +579,29 @@ footer b{color:var(--on-night)}
   <div class="howto" id="app-other"><b>Su Android:</b> nel menu di Chrome (i tre puntini) scegli "Installa app" o "Aggiungi a schermata Home". <b>Su iPhone:</b> in Safari tocca Condividi e poi "Aggiungi alla schermata Home".</div>
 </div></section>
 
+<section class="legal" id="privacy" aria-labelledby="privacy-t"><div class="in">
+  <details class="legal-box">
+    <summary><span id="privacy-t">Privacy e cookie</span><small>Come questo sito tratta i dati</small></summary>
+    <div class="legal-body">
+      <p>Questo sito non vende né cede a terzi dati personali, non usa cookie di profilazione e non usa strumenti di statistica sui visitatori.</p>
+      <ul>
+        <li><b>Richiesta di iscrizione.</b> Il modulo non invia nulla da solo: prepara un messaggio che tu decidi di spedire con WhatsApp o con la tua email. I dati che invii (nome della squadra, paese, referente, telefono, note) servono solo a gestire l'iscrizione al torneo e a ricontattarti.</li>
+        <li><b>Contatti per sponsor.</b> Se scrivi per sostenere il torneo, i tuoi dati servono solo a risponderti.</li>
+        <li><b>Hosting.</b> Il sito è ospitato su GitHub Pages (GitHub Inc.), che per motivi tecnici e di sicurezza può registrare l'indirizzo IP di chi visita le pagine.</li>
+        <li><b>Video YouTube.</b> Il video della finale è inserito in modalità a privacy avanzata (youtube-nocookie.com). Quando lo guardi, YouTube (Google) riceve alcuni dati tecnici della tua navigazione.</li>
+        <li><b>Caratteri del sito.</b> Alcuni caratteri tipografici sono caricati da Google Fonts, che riceve l'indirizzo IP di chi visita il sito.</li>
+        <li><b>Link esterni.</b> Facebook, Instagram, WhatsApp, Gmail, Outlook, Google Maps e Giornale di Brescia sono servizi esterni con le loro regole sulla privacy.</li>
+        <li><b>App sul telefono.</b> Se installi il sito come app, alcuni file vengono salvati solo sul tuo dispositivo per aprirlo più in fretta. Non contengono dati personali.</li>
+        <li><b>Foto e video.</b> Le foto delle squadre e il video sono stati realizzati durante le serate pubbliche del torneo. Chi desidera la rimozione di un'immagine in cui compare può chiederla in qualsiasi momento.</li>
+      </ul>
+      <p><b>I tuoi diritti.</b> Puoi chiedere in ogni momento di vedere, correggere o cancellare i tuoi dati scrivendo a <b>info@sportmc.it</b>. Puoi anche presentare reclamo al Garante per la protezione dei dati personali (garanteprivacy.it).</p>
+    </div>
+  </details>
+</div></section>
 <footer><div class="in">
   <div><b>Gran Notturno Maclodio</b> · Oratorio di Maclodio (BS) · dal 1978</div>
   <div style="display:grid;gap:10px;justify-items:start"><div class="social"><a href="https://www.facebook.com/Grannotturnomaclodio/" target="_blank" rel="noopener" aria-label="Gran Notturno Maclodio su Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21z"/></svg><span>Facebook</span></a><a href="https://www.instagram.com/grannotturnomaclodio/" target="_blank" rel="noopener" aria-label="Gran Notturno Maclodio su Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21 8c-.1-1.5-.4-2.8-1.5-3.9S17.5 2.7 16 2.6C14.5 2.5 9.5 2.5 8 2.6c-1.5.1-2.8.4-3.9 1.5S2.7 6.5 2.6 8c-.1 1.5-.1 6.5 0 8 .1 1.5.4 2.8 1.5 3.9s2.4 1.4 3.9 1.5c1.5.1 6.5.1 8 0 1.5-.1 2.8-.4 3.9-1.5s1.4-2.4 1.5-3.9c.1-1.5.1-6.5 0-8zm-2 9.7a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.3.4s-4.1.1-5.3-.4A3 3 0 0 1 5 17.7c-.5-1.2-.4-4-.4-5.3s-.1-4.1.4-5.3A3 3 0 0 1 6.7 5.4c1.2-.5 4-.4 5.3-.4s4.1-.1 5.3.4A3 3 0 0 1 19 7.1c.5 1.2.4 4 .4 5.3s.1 4.1-.4 5.3z"/></svg><span>Instagram</span></a></div><span>@grannotturnomaclodio · #GranNotturnoMaclodio #Maclodio #TorneoEstivo</span></div>
+  <div class="foot-copy">© 1978–2026 Gran Notturno Maclodio · Tutti i diritti riservati.<br>Logo, nome del torneo, foto, video e testi non possono essere copiati o usati senza autorizzazione dell'organizzazione. I marchi degli sponsor appartengono ai rispettivi proprietari. · <a href="#privacy" id="open-privacy">Privacy e cookie</a></div>
 </div></footer>
 <div class="toast" id="toast" hidden></div>
 <div class="lightbox" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto della squadra"><figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption>
@@ -651,6 +684,7 @@ document.getElementById("tb").innerHTML=
   <div class="tb-y fin"><span class="cup"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17 4V2H7v2H3v3a4 4 0 0 0 4 4h.3A5 5 0 0 0 11 13.9V17H8v2h8v-2h-3v-3.1a5 5 0 0 0 3.7-2.9H17a4 4 0 0 0 4-4V4zM5 7V6h2v3a2 2 0 0 1-2-2zm14 0a2 2 0 0 1-2 2V6h2z"/></svg>Vincitrice 2026: Tecnocasa</span><h5>Finalissima 1°/2° posto</h5><div class="vs"><span class="w">${TC}</span><small>6</small><span>${BZ}</span><small>5</small></div><div class="legs">Mercoledì 1 luglio · ore 22:00</div></div></div>`+
  `<div class="tb-blk l"><h3 class="tb-t">Tabellone perdente</h3>${cols(L,false)}</div>`;
 })();
+document.getElementById("open-privacy").addEventListener("click",()=>{document.querySelector(".legal-box").open=true});
 /* Iscrizione */
 $("copy-num2").addEventListener("click",()=>copy("339 303 2760","Numero copiato"));
 $("copy-mail").addEventListener("click",()=>copy("info@sportmc.it","Email copiata"));

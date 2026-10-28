@@ -27,8 +27,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Gran Notturno">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&display=swap">
+<link rel="preload" href="fonts/anton-latin.woff" as="font" type="font/woff" crossorigin>
+<style>@font-face{font-family:"Anton";src:url(fonts/anton-latin.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:"Archivo";src:url(fonts/archivo-latin.woff) format("woff");font-weight:400 800;font-style:normal;font-display:swap}</style>
 
 <style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <style>
@@ -36,7 +36,7 @@
 :root{
   --ice:#eef3fb; --paper:#ffffff; --ink:#0f2350; --ink-2:#3b4b72; --line:#d3ddef;
   --royal:#1d4fa3; --night:#0b1a3e; --night-2:#132a5c; --on-night:#eaf0fb; --on-night-2:#a9b8d8;
-  --magenta:#d8106f; --magenta-soft:#fbe3ef;
+  --magenta:#8a5e00; --magenta-soft:#fbf0d4; --gold:#f0be46;
   --f-display:"Anton","Impact","Arial Narrow",sans-serif;
   --f-body:"Archivo","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --r:12px;
@@ -44,11 +44,11 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --ice:#0d1733; --paper:#14214a; --ink:#eaf0fb; --ink-2:#a9b8d8; --line:#24356a;
   --royal:#7ea6f2; --night:#060e24; --night-2:#0f1c40; --on-night:#eaf0fb; --on-night-2:#a9b8d8;
-  --magenta:#ff4fa0; --magenta-soft:#3a1430; color-scheme:dark}}
+  --magenta:#f0be46; --magenta-soft:#3a2f12; --gold:#f0be46; color-scheme:dark}}
 :root[data-theme="dark"]{
   --ice:#0d1733; --paper:#14214a; --ink:#eaf0fb; --ink-2:#a9b8d8; --line:#24356a;
   --royal:#7ea6f2; --night:#060e24; --night-2:#0f1c40; --on-night:#eaf0fb; --on-night-2:#a9b8d8;
-  --magenta:#ff4fa0; --magenta-soft:#3a1430; color-scheme:dark}
+  --magenta:#f0be46; --magenta-soft:#3a2f12; --gold:#f0be46; color-scheme:dark}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:64px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
@@ -136,10 +136,12 @@ nav.top .in{position:relative}
 .albo-head input{font:500 16px var(--f-body);padding:10px 14px;border-radius:8px;border:1px solid var(--night-2);background:var(--night-2);color:var(--on-night);width:min(320px,100%)}
 .albo-head input::placeholder{color:var(--on-night-2)}
 .decades{display:grid;gap:26px}
+.decades.short .decade.more{display:none}
+.yr.last b::after{content:" 🏆";font-size:16px}
 .decade h3{font-size:22px;color:var(--on-night-2);margin-bottom:8px}
 .years{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:2px 18px}
 .yr{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;padding:9px 0;border-bottom:1px solid var(--night-2);align-items:baseline}
-.yr b{font-family:var(--f-display);font-weight:400;font-size:22px;color:#ff7dbb;font-variant-numeric:tabular-nums}
+.yr b{font-family:var(--f-display);font-weight:400;font-size:22px;color:#f0be46;font-variant-numeric:tabular-nums}
 .yr span{display:grid;min-width:0}
 .yr span strong{font-weight:600;overflow-wrap:anywhere}
 .yr span small{color:var(--on-night-2)}
@@ -147,7 +149,7 @@ nav.top .in{position:relative}
 .yr.last{background:linear-gradient(90deg,var(--night-2),transparent);padding-inline:8px;border-radius:6px}
 .multi{display:flex;flex-wrap:wrap;gap:8px}
 .multi span{background:var(--night-2);border-radius:999px;padding:6px 12px;font-size:14px}
-.multi span b{color:#ff7dbb;margin-right:6px}
+.multi span b{color:#f0be46;margin-right:6px}
 /* giovanili */
 .cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
 .cat{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:12px;align-content:start}
@@ -180,7 +182,12 @@ nav.top .in{position:relative}
 .tsp div{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--magenta);border-radius:var(--r);padding:16px;display:grid;gap:2px}
 .tsp small{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--magenta)}
 .tsp b{font-family:var(--f-display);font-weight:400;font-size:26px;line-height:1.05;text-transform:uppercase}
-.spwall{list-style:none;margin:0;padding:0;columns:4 210px;column-gap:28px}
+.spwall{list-style:none;margin:14px 0 0;padding:0;columns:4 210px;column-gap:28px}
+.spmore summary{cursor:pointer;font-weight:800;color:var(--ink);padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:var(--paper);list-style:none;display:flex;align-items:center;gap:8px}
+.spmore summary::-webkit-details-marker{display:none}
+.spmore summary::after{content:"+";margin-left:auto;font-size:22px;color:var(--magenta)}
+.spmore[open] summary::after{content:"–"}
+@media (max-width:600px){.spwall{columns:2 140px;column-gap:16px}.spwall li{font-size:12.5px}}
 .spwall li{break-inside:avoid;padding:7px 0;border-bottom:1px solid var(--line);font-weight:700;font-size:14px;letter-spacing:.03em}
 .timeline{list-style:none;margin:0;padding:0;display:grid;gap:0;border-left:3px solid var(--line);margin-left:6px}
 .timeline li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;padding:18px 0 18px 22px;position:relative}
@@ -207,8 +214,8 @@ nav.top .in{position:relative}
 .social svg{width:18px;height:18px}
 .hero-social a{border-color:var(--line);color:var(--ink);background:var(--paper)}
 .hero-social a:hover{background:var(--ice)}
-.next-ed{display:flex;align-items:center;gap:14px;width:fit-content;max-width:100%;background:var(--magenta);color:#fff;border-radius:14px;padding:14px 22px;font-family:var(--f-display);font-weight:400;font-size:clamp(24px,3.6vw,34px);line-height:1.05;text-transform:uppercase;letter-spacing:.01em;box-shadow:0 14px 30px -16px rgba(216,16,111,.7)}
-.next-ed .dot{flex:none;width:14px;height:14px;border-radius:50%;background:#fff;animation:pulse 1.6s ease-in-out infinite}
+.next-ed{display:flex;align-items:center;gap:14px;width:fit-content;max-width:100%;background:#f0be46;color:#0f2350;border-radius:14px;padding:14px 22px;font-family:var(--f-display);font-weight:400;font-size:clamp(24px,3.6vw,34px);line-height:1.05;text-transform:uppercase;letter-spacing:.01em;box-shadow:0 14px 30px -16px rgba(216,16,111,.7)}
+.next-ed .dot{flex:none;width:14px;height:14px;border-radius:50%;background:#0f2350;animation:pulse 1.6s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
 .tbw{display:grid;gap:12px}
 .brk-orig{color:var(--on-night-2);font-size:14px;font-weight:700}
@@ -252,8 +259,8 @@ nav.top .in{position:relative}
 .tb-y .vs small{font-size:10px;color:#5b6b8f;font-weight:800;letter-spacing:.06em}
 .tb-y .vs .w{font-weight:900}
 .tb-y .legs{font-size:12px;font-weight:700;color:#0f2350;border-top:1px solid rgba(15,35,80,.3);padding-top:5px}
-.tb-y.fin{background:#fbe48a;outline:3px solid #d8106f;outline-offset:2px}
-.tb-y.fin .cup{font-size:12px;font-weight:900;color:#d8106f;text-transform:uppercase;letter-spacing:.06em}
+.tb-y.fin{background:#fbe48a;outline:3px solid #c48a00;outline-offset:2px}
+.tb-y.fin .cup{font-size:12px;font-weight:900;color:#8a5e00;text-transform:uppercase;letter-spacing:.06em}
 .tbw-legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--on-night-2)}
 .tbw-legend span{display:inline-flex;align-items:center;gap:6px}
 .lg{display:inline-block;width:16px;height:12px;border-radius:3px;border:1px solid #0f2350}.lg.v{background:#cfeeb4}.lg.p{background:#f8c9c9}
@@ -270,13 +277,13 @@ nav.top .in{position:relative}
   background:repeating-linear-gradient(90deg,rgba(46,140,70,.32) 0 70px,rgba(46,140,70,.2) 70px 140px);
   -webkit-mask:linear-gradient(180deg,transparent,#000);mask:linear-gradient(180deg,transparent,#000)}
 .hero .in{position:relative;z-index:1;grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr);gap:40px}
-.hero .eyebrow{color:#ff8fc3}
+.hero .eyebrow{color:#f0be46}
 .hero h1{color:#fff;font-size:clamp(52px,8.4vw,104px);text-shadow:0 6px 30px rgba(0,0,0,.35)}
 .hero h1 span{color:#8fb4ff}
 .hero .lead{color:#c9d5ee}
 .hero-facts{gap:12px}
 .hero-facts div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:10px 16px;backdrop-filter:blur(2px)}
-.hero-facts b{color:#ff5fa8}
+.hero-facts b{color:#f0be46}
 .hero-facts span{color:#c9d5ee}
 .hero .crest{background:#fff;border-radius:28px;padding:26px 22px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6),0 0 0 6px rgba(255,255,255,.08);transform:rotate(-2deg)}
 .hero-cta{display:flex;flex-wrap:wrap;gap:10px}
@@ -285,7 +292,7 @@ nav.top .in{position:relative}
 .btn.outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
 .hero-social a{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3);color:#fff}
 .hero-social a:hover{background:rgba(255,255,255,.16)}
-.next-ed{box-shadow:0 16px 36px -14px rgba(255,79,160,.75)}
+.next-ed{box-shadow:0 16px 36px -14px rgba(240,190,70,.6)}
 @media (max-width:820px){.hero{padding-block:28px 64px}.hero .in{grid-template-columns:1fr;gap:22px}.hero .crest{order:-1;max-width:240px;transform:rotate(-2deg)}}
 h2{font-size:clamp(38px,5.6vw,66px)}
 .sec .eyebrow:has(+ h2){display:inline-flex;align-items:center;gap:10px}
@@ -306,7 +313,7 @@ footer{background:#060f27}
 .tb-hd{grid-area:hd;display:flex;align-items:center;gap:14px;padding-bottom:16px;border-bottom:2px solid rgba(15,35,80,.12)}
 .tb-hd img{width:64px;height:auto}
 .tb-hd b{display:block;font-family:var(--f-display);font-weight:400;font-size:30px;line-height:1;text-transform:uppercase;color:#0f2350}
-.tb-hd span{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#d8106f}
+.tb-hd span{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#8a5e00}
 .tb-t{display:inline-block;width:fit-content;color:#fff!important;font-size:22px;padding:7px 14px 6px;border-radius:8px;letter-spacing:.02em;box-shadow:0 6px 14px -8px rgba(15,35,80,.6)}
 .tb-blk.w .tb-t{background:linear-gradient(90deg,#24923a,#3cb558)}
 .tb-blk.l .tb-t{background:linear-gradient(90deg,#c62f3a,#e5525b)}
@@ -335,13 +342,14 @@ footer{background:#060f27}
 .tb-y .vs small{justify-self:end;min-width:30px;text-align:center;background:#eef2f9;color:#4b5a7c;border-radius:6px;padding:3px 6px;font-size:12px;font-weight:800}
 .tb-y .vs .w{color:#0f2350}
 .tb-y .legs{font-size:12px;color:#5b6b8f;border-top:1px solid rgba(15,35,80,.12)}
-.tb-y.fin{background:linear-gradient(160deg,#fff3b8 0%,#ffd75a 100%);border-top-color:#d8106f;outline:0;box-shadow:0 18px 36px -14px rgba(216,16,111,.55),0 0 0 2px #d8106f}
+.tb-y.fin{background:linear-gradient(160deg,#fff3b8 0%,#ffd75a 100%);border-top-color:#c48a00;outline:0;box-shadow:0 18px 36px -14px rgba(196,138,0,.55),0 0 0 2px #c48a00}
 .tb-y.fin .cup{display:flex;align-items:center;gap:6px;color:#b00d5b}
 .tb-y.fin .cup svg{width:18px;height:18px}
 @media (max-width:720px){.tb{padding:18px 18px 24px;gap:24px 40px}.tb-hd b{font-size:24px}.tb-hd img{width:52px}}
-.support{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px 28px;padding:26px 28px;border-radius:16px;color:#fff;background:linear-gradient(120deg,#d8106f 0%,#a30d58 55%,#0f2350 100%);box-shadow:0 20px 40px -20px rgba(216,16,111,.7)}
+.support{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px 28px;padding:26px 28px;border-radius:16px;color:#fff;background:linear-gradient(120deg,#0f2350 0%,#1d4fa3 100%);border:2px solid #f0be46;box-shadow:0 20px 40px -20px rgba(240,190,70,.55)}
+.support h3{color:#f0be46}
 .support h3{color:#fff;font-size:clamp(26px,3.6vw,36px);line-height:1}
-.support p{color:#ffe1ef;font-size:17px}
+.support p{color:#dfe6f5;font-size:17px}
 .support p b{color:#fff}
 .support-btns{display:flex;flex-wrap:wrap;gap:10px}
 .support-btns .btn{font-size:16px;padding:13px 20px}
@@ -349,7 +357,7 @@ footer{background:#060f27}
 .legal-box{border-radius:12px;background:#0b1a3e;color:#c9d5ee;margin-top:22px}
 .legal-box summary{cursor:pointer;list-style:none;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:14px 18px;font-weight:800;color:#fff}
 .legal-box summary::-webkit-details-marker{display:none}
-.legal-box summary::after{content:"+";margin-left:auto;color:#ff7dbb;font-size:22px;line-height:1}
+.legal-box summary::after{content:"+";margin-left:auto;color:#f0be46;font-size:22px;line-height:1}
 .legal-box[open] summary::after{content:"–"}
 .legal-box summary small{font-weight:500;color:#a9b8d8;font-size:14px}
 .legal-body{padding:0 18px 18px;font-size:14px;line-height:1.6}
@@ -359,8 +367,8 @@ footer{background:#060f27}
 .foot-copy{flex-basis:100%;font-size:12.5px;line-height:1.55;color:#8597bd;border-top:1px solid #132a5c;padding-top:14px}
 .foot-copy a{color:#c9d5ee}
 nav.top ul a.nav-org{color:#fff;border:1px solid rgba(255,255,255,.4);margin-left:4px}
-nav.top ul a.nav-org:hover{background:#d8106f;border-color:#d8106f}
-@media (max-width:1100px){nav.top ul a.nav-org{grid-column:1/-1;margin-left:0;background:#d8106f;border-color:#d8106f}}
+nav.top ul a.nav-org:hover{background:#f0be46;border-color:#f0be46;color:#0f2350}
+@media (max-width:1100px){nav.top ul a.nav-org{grid-column:1/-1;margin-left:0;background:#f0be46;border-color:#f0be46;color:#0f2350}}
 /* regolamento */
 .rules{display:grid;gap:8px}
 details.rule{background:var(--paper);border:1px solid var(--line);border-radius:10px}
@@ -379,7 +387,7 @@ label{display:grid;gap:5px;font-size:13px;font-weight:700;letter-spacing:.04em;c
 input,textarea{font:500 16px var(--f-body);color:var(--ink);background:var(--ice);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%;min-width:0}
 textarea{min-height:84px;resize:vertical}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:8px;padding:12px 18px;font:800 15px var(--f-body);cursor:pointer;text-decoration:none;letter-spacing:.02em}
-.btn.pri{background:var(--magenta);color:#fff}
+.btn.pri{background:#f0be46;color:#0f2350}
 .btn.sec{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .btn.wa{background:#1f8f4e;color:#fff}
 .out{display:grid;gap:10px;border-top:1px dashed var(--line);padding-top:14px}
@@ -417,7 +425,7 @@ footer b{color:var(--on-night)}
 
 <header class="hero" id="top"><div class="in">
   <div class="stack">
-    <div class="eyebrow">Oratorio di Maclodio · Comune di Maclodio · Provincia di Brescia · dal 1978</div>
+    <div class="eyebrow">Oratorio di Maclodio (BS) · dal 1978</div>
     <h1>Gran Notturno <span>Maclodio</span></h1>
     <div class="next-ed" role="status"><span class="dot" aria-hidden="true"></span><span>La 48ª edizione è in preparazione</span></div>
     <p class="lead">Il torneo notturno di calcio a 6 più longevo della provincia di Brescia. Sedici squadre, due partite a sera sotto i fari della "piccola Bombonera", e prima degli adulti i tornei giovanili.</p>
@@ -504,7 +512,8 @@ footer b{color:var(--on-night)}
 
 <section class="sec night" id="albo"><div class="in">
   <div><div class="eyebrow">Albo d'oro</div><h2>Dal 1978 a oggi</h2></div>
-  <div class="decades" id="decades"></div>
+  <div class="decades short" id="decades"></div>
+  <div><button type="button" class="btn light" id="albo-all" aria-expanded="false" aria-controls="decades">Vedi tutti gli anni, dal 1978</button></div>
 </div></section>
 
 <section class="sec night" id="torneo"><div class="in">
@@ -567,7 +576,7 @@ footer b{color:var(--on-night)}
     <div><small>3° Trofeo</small><b>Autotrasporti G. Mondini</b></div>
     <div><small>4° Trofeo</small><b>Il Pane di Anna</b></div>
   </div></div>
-  <ul class="spwall" id="spwall"></ul>
+  <details class="spmore" id="spmore"><summary>Tutti gli sponsor dell'edizione 2026 <span id="spn"></span></summary><ul class="spwall" id="spwall"></ul></details>
   <div class="support">
     <div style="display:grid;gap:6px;min-width:0"><h3>Vuoi sostenere la prossima edizione?</h3><p style="margin:0">Scrivi su WhatsApp al <b>335 213 789</b> oppure scrivi a <b>info@grannotturnomaclodio.it</b></p></div>
     <div class="support-btns"><a class="btn wa" href="https://wa.me/39335213789?text=Ciao%2C%20vorrei%20sostenere%20il%20Gran%20Notturno%20Maclodio" target="_blank" rel="noopener">WhatsApp 335 213 789</a><a class="btn light" href="https://mail.google.com/mail/?view=cm&amp;to=info@grannotturnomaclodio.it&amp;su=Sponsor%20Gran%20Notturno%20Maclodio" target="_blank" rel="noopener">Scrivi a info@grannotturnomaclodio.it</a></div>
@@ -598,7 +607,6 @@ footer b{color:var(--on-night)}
         <li><b>Contatti per sponsor.</b> Se scrivi per sostenere il torneo, i tuoi dati servono solo a risponderti.</li>
         <li><b>Hosting.</b> Il sito è ospitato su GitHub Pages (GitHub Inc.), che per motivi tecnici e di sicurezza può registrare l'indirizzo IP di chi visita le pagine.</li>
         <li><b>Video YouTube.</b> Il video della finale è inserito in modalità a privacy avanzata (youtube-nocookie.com). Quando lo guardi, YouTube (Google) riceve alcuni dati tecnici della tua navigazione.</li>
-        <li><b>Caratteri del sito.</b> Alcuni caratteri tipografici sono caricati da Google Fonts, che riceve l'indirizzo IP di chi visita il sito.</li>
         <li><b>Link esterni.</b> Facebook, Instagram, WhatsApp, Gmail, Outlook, Google Maps e Giornale di Brescia sono servizi esterni con le loro regole sulla privacy.</li>
         <li><b>App sul telefono.</b> Se installi il sito come app, alcuni file vengono salvati solo sul tuo dispositivo per aprirlo più in fretta. Non contengono dati personali.</li>
         <li><b>Foto.</b> Le foto delle squadre sono state realizzate durante le serate pubbliche del torneo. Le immagini dei ragazzi dei tornei giovanili si pubblicano solo con il consenso dei genitori. Chi desidera la rimozione di un'immagine in cui compare può chiederla in qualsiasi momento a info@grannotturnomaclodio.it: la togliamo subito.</li>
@@ -643,16 +651,17 @@ async function copy(text,ok){try{await navigator.clipboard.writeText(text);toast
 /* Albo d'oro */
 function renderAlbo(){
   const by={};ALBO.forEach(r=>{const d=Math.floor(r[0]/10)*10;(by[d]=by[d]||[]).push(r)});
-  $("decades").innerHTML=Object.keys(by).sort((a,b)=>b-a).map(d=>`<div class="decade"><h3>Anni ${String(d).slice(2)}${d==="2020"?" e oggi":""}</h3><div class="years">${by[d].map(([y,s,l])=>s?`<div class="yr ${y===2026?"last":""}"><b>${y}</b><span><strong>${esc(s)}</strong><small>${esc(l)}</small></span></div>`:`<div class="yr void"><b>${y}</b><span><strong>Sospeso per COVID</strong></span></div>`).join("")}</div></div>`).join("");
+  $("decades").innerHTML=Object.keys(by).sort((a,b)=>b-a).map(d=>`<div class="decade${d==="2020"?"":" more"}"><h3>Anni ${String(d).slice(2)}${d==="2020"?" e oggi":""}</h3><div class="years">${by[d].map(([y,s,l])=>s?`<div class="yr ${y===2026?"last":""}"><b>${y}</b><span><strong>${esc(s)}</strong><small>${esc(l)}</small></span></div>`:`<div class="yr void"><b>${y}</b><span><strong>Sospeso per COVID</strong></span></div>`).join("")}</div></div>`).join("");
 }
 renderAlbo();
+$("albo-all").addEventListener("click",function(){const d=$("decades"),o=d.classList.toggle("short");this.textContent=o?"Vedi tutti gli anni, dal 1978":"Mostra solo gli ultimi anni";this.setAttribute("aria-expanded",String(!o));if(o)$("albo").scrollIntoView({behavior:"smooth"})});
 
 /* Giovanili e partecipanti */
 $("cats").innerHTML=CATS.map(c=>`<article class="cat"><h3>${esc(c.nome)}</h3><div class="meta"><span>A 9 giocatori</span><span>Inizio ${esc(c.ora)}</span><span>${c.g.reduce((n,g)=>n+g[1].length,0)} squadre</span></div>
   <div class="gir">${c.g.map(([n,t])=>`<div><b>${esc(n)}</b><ul>${t.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`).join("")}</div><p class="muted" style="margin:0;font-size:14px">${esc(c.fin)}</p></article>`).join("");
 const ph=i=>"squadre/s"+String(i+1).padStart(2,"0")+".jpg";
 $("teams").innerHTML=TEAMS2026.map((t,i)=>`<li${i===1?' class="win"':""}><button type="button" data-ph="${i}"><img src="${ph(i)}" alt="Foto della squadra ${esc(t)}" loading="lazy" width="1200" height="800"><span>${esc(t)}</span></button></li>`).join("");
-$("spwall").innerHTML=SPONSOR.map(n=>`<li>${esc(n)}</li>`).join("");
+$("spwall").innerHTML=SPONSOR.map(n=>`<li>${esc(n)}</li>`).join("");$("spn").textContent="("+SPONSOR.length+")";if(window.innerWidth>=900)$("spmore").open=true;
 let cur=0;const lb=$("lb");
 function show(i){cur=(i+TEAMS2026.length)%TEAMS2026.length;$("lb-img").src=ph(cur);$("lb-img").alt="Foto della squadra "+TEAMS2026[cur];$("lb-cap").textContent=TEAMS2026[cur];lb.hidden=false;document.body.style.overflow="hidden";$("lb-close").focus()}
 function hide(){lb.hidden=true;document.body.style.overflow="";const b=document.querySelector('[data-ph="'+cur+'"]');b&&b.focus()}
@@ -693,6 +702,8 @@ document.getElementById("tb").innerHTML=
   <div class="tb-y fin"><span class="cup"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17 4V2H7v2H3v3a4 4 0 0 0 4 4h.3A5 5 0 0 0 11 13.9V17H8v2h8v-2h-3v-3.1a5 5 0 0 0 3.7-2.9H17a4 4 0 0 0 4-4V4zM5 7V6h2v3a2 2 0 0 1-2-2zm14 0a2 2 0 0 1-2 2V6h2z"/></svg>Vincitrice 2026: Tecnocasa</span><h5>Finalissima 1°/2° posto</h5><div class="vs"><span class="w">${TC}</span><small>6</small><span>${BZ}</span><small>5</small></div><div class="legs">Mercoledì 1 luglio · ore 22:00</div></div></div>`+
  `<div class="tb-blk l"><h3 class="tb-t">Tabellone perdente</h3>${cols(L,false)}</div>`;
 })();
+function fitTb(){const sc=document.querySelector(".tbw-scroll"),t=document.getElementById("tb");if(!sc||!t)return;t.style.transform="";sc.style.height="";sc.style.overflow="";if(window.innerWidth<900)return;const k=sc.clientWidth/t.scrollWidth;if(k<1){t.style.transformOrigin="top left";t.style.transform="scale("+k+")";sc.style.height=Math.ceil(t.offsetHeight*k)+"px";sc.style.overflow="hidden"}}
+fitTb();window.addEventListener("resize",fitTb);window.addEventListener("load",fitTb);try{document.fonts&&document.fonts.ready.then(fitTb)}catch(e){}
 document.getElementById("open-privacy").addEventListener("click",()=>{document.querySelector(".legal-box").open=true});
 /* Iscrizione */
 $("copy-num2").addEventListener("click",()=>copy("339 303 2760","Numero copiato"));

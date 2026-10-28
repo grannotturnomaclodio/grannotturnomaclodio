@@ -1,6 +1,6 @@
 /* Gran Notturno Maclodio: rende il sito installabile e consultabile anche con poca rete */
-const CACHE = "gnm-v39";
-const CORE = ["./", "index.html", "logo.png", "favicon.png", "icon-192.png", "icon-512.png", "manifest.webmanifest", "tabellone-2026.jpg", "promo-poster.jpg"];
+const CACHE = "gnm-v40";
+const CORE = ["./", "index.html", "logo.png", "favicon.png", "icon-192.png", "icon-512.png", "manifest.webmanifest", "tabellone-2026.jpg"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", e => {

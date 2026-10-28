@@ -225,7 +225,7 @@ nav.top .in{position:relative}
 .tbw-scroll{overflow:auto;border-radius:18px;background:#f4f7fd;-webkit-overflow-scrolling:touch;box-shadow:0 30px 60px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.12)}
 .tbw-scroll:focus-visible{outline:3px solid var(--magenta)}
 .tb{--ink:#0f2350;--mute:#6b7898;--line:#c3cde0;--win:#1f8a3a;--los:#d93a46;--fx:#d8106f;
-  display:grid;grid-template-columns:auto 268px;grid-template-areas:"hd hd" "w sf" "l sf";gap:34px 46px;width:max-content;padding:0 30px 34px;color:var(--ink);font-family:var(--f-body);
+  display:grid;grid-template-columns:auto 300px;grid-template-areas:"hd hd" "w sf" "l sf";gap:34px 46px;width:max-content;padding:0 30px 34px;color:var(--ink);font-family:var(--f-body);
   background:radial-gradient(900px 300px at 100% 0,rgba(216,16,111,.07),transparent 70%),linear-gradient(180deg,#f8faff,#eaf0fa)}
 .tb-hd{grid-area:hd;display:flex;align-items:center;gap:16px;margin:0 -30px;padding:16px 30px;color:#fff;
   background:linear-gradient(100deg,#081433 0%,#0f2350 60%,#3a1550 100%);border-bottom:4px solid var(--fx)}
@@ -294,6 +294,16 @@ nav.top .in{position:relative}
 .tb-y .legs{padding:6px 12px 8px;font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:#f6f8fc;border-top:1px solid #edf1f8}
 .tb-y.fin{box-shadow:0 0 0 2px var(--fx),0 16px 30px -14px rgba(216,16,111,.6)}
 .tb-y.fin h5{background:linear-gradient(90deg,#fff1f8,#fff)}
+.tb-m.cp,.tb-y.cp{box-shadow:0 0 0 2px #e0a800,0 12px 24px -12px rgba(224,168,0,.75)}
+.tb-r.cpr,.tb-y .n.cpr{background:linear-gradient(90deg,#fff3c4,#fffbea);color:var(--ink);font-weight:900}
+.tb-r.cpr .n::before,.tb-y .n.cpr::before{content:"★ ";color:#e0a800}
+.tb-g.cp::after,.tb-m.cp::before{border-color:#e0a800!important;border-width:3px!important}
+.tb-path{list-style:none;margin:12px 0 0;padding:10px 0 0;border-top:1px solid rgba(255,255,255,.2);display:grid;gap:5px;text-align:left}
+.tb-path li{display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:6px;align-items:center;font-size:12px;font-weight:700;color:#efe6f7}
+.tb-path li i{font-style:normal;font-size:9px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#ffd75a}
+.tb-path li span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tb-path li b{white-space:nowrap;font-family:var(--f-display);font-weight:400;font-size:15px;color:#fff;background:rgba(255,255,255,.14);border-radius:5px;padding:2px 6px}
+.tb-champ{cursor:pointer}
+.lg.c{background:#e0a800}
 .tbw-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
 .tbw-tools label{font-size:14px;font-weight:700;color:var(--on-night-2)}
 .tbw-tools select{font:inherit;font-size:15px;font-weight:700;padding:9px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.3);background:#132a5c;color:#fff;max-width:100%}
@@ -533,7 +543,7 @@ footer b{color:var(--on-night)}
     <div class="tbw-head"><p class="tbw-hint">Il tabellone completo dell'edizione 2026 con tutti i risultati. Sul telefono scorri con il dito per vederlo tutto.</p><a class="brk-orig" href="tabellone-2026.jpg" target="_blank" rel="noopener">Schema ufficiale 2026</a></div>
     <div class="tbw-tools"><label for="tb-follow">Segui una squadra</label><select id="tb-follow"></select><button type="button" id="tb-clear" hidden>Mostra tutte</button></div>
     <div class="tbw-scroll" tabindex="0" aria-label="Tabellone 2026, scorribile"><div class="tb" id="tb"></div></div>
-    <div class="tbw-legend"><span><i class="lg v"></i>Tabellone vincente</span><span><i class="lg p"></i>Tabellone perdente: chi perde è eliminato</span><span><i class="lg f"></i>Semifinali e finali</span><span><b class="lg-n">7</b>Numero della partita: la perdente rientra nel tabellone perdente con lo stesso numero</span></div>
+    <div class="tbw-legend"><span><i class="lg v"></i>Tabellone vincente</span><span><i class="lg p"></i>Tabellone perdente: chi perde è eliminato</span><span><i class="lg f"></i>Semifinali e finali</span><span><i class="lg c"></i>★ Il percorso di Tecnocasa, vincitrice 2026</span><span><b class="lg-n">7</b>Numero della partita: la perdente rientra nel tabellone perdente con lo stesso numero</span></div>
   </div>
 </div></section>
 
@@ -705,10 +715,13 @@ const tb=document.getElementById("tb");
 tb.innerHTML=
  `<div class="tb-hd"><img src="logo.png" alt="" width="58" height="44"><div><b>47° Gran Notturno Maclodio</b><span>Tabellone e risultati 2026</span></div><div class="ch">${CUP}<div><small>Campione 2026</small><strong>${TC}</strong></div></div></div>`+
  `<div class="tb-blk w"><h3 class="tb-t">Tabellone vincente <small>chi perde ha una seconda possibilità</small></h3>${cols(W,true)}</div>`+
- `<div class="tb-sf"><div class="tb-champ">${CUP}<small>Vincitrice 2026</small><strong>${TC}</strong><span>Sei partite, sei vittorie · 6-5 in finale</span></div>`+
+ `<div class="tb-sf"><div class="tb-champ">${CUP}<small>Vincitrice 2026</small><strong>${TC}</strong><span>Il percorso: sei partite, sei vittorie</span><ul class="tb-path">${[["1° turno",BM,"7-4"],["2° turno",AS,"4-2"],["3° turno",CA,"3-2"],["Semifinale",ML,"3-1 · 3-2"],["Finalissima",BZ,"6-5"]].map(([t,o,r])=>`<li><i>${t}</i><span>vs ${o}</span><b>${r}</b></li>`).join("")}</ul></div>`+
  `<h4>Semifinali</h4>${semi("Prima semifinale",BZ,"V1",CA,"P2",[7,2],[4,1],"Andata ven 26/6 · Ritorno lun 29/6")}${semi("Seconda semifinale",TC,"V2",ML,"P1",[3,3],[1,2],"Andata ven 26/6 · Ritorno lun 29/6")}`+
  `<h4>Finali · mercoledì 1 luglio</h4>${fin("Finalissima 1°/2°","fin","ore 22:00",TC,6,BZ,5)}${fin("Finale 3°/4°","","ore 21:10",ML,5,CA,3)}</div>`+
  `<div class="tb-blk l"><h3 class="tb-t">Tabellone perdente <small>chi perde è eliminato</small></h3>${cols(L,false)}</div>`;
+/* Percorso della vincitrice */
+tb.querySelectorAll(`[data-t="${q(TC)}"]`).forEach(e=>{e.classList.add("cpr");const m=e.closest(".tb-m,.tb-y");if(m){m.classList.add("cp");const g=m.closest(".tb-g");g&&g.classList.add("cp")}});
+tb.querySelector(".tb-champ").addEventListener("click",e=>{e.stopPropagation();follow(sel.value===TC?"":TC)});
 /* Segui una squadra */
 const sel=document.getElementById("tb-follow"),clr=document.getElementById("tb-clear");
 const names=[...new Set([...tb.querySelectorAll("[data-t]")].map(e=>e.dataset.t))].sort((x,y)=>x.localeCompare(y,"it"));
